@@ -1,0 +1,48 @@
+# 2.x USB Storage mode (Tracker Mini manual §13.10; Config > USB > USB Storage).
+wait 300
+expect-usbstorage off
+# On with the script command, then Exit (F8) on the mode page.
+usbstorage on
+wait 100
+expect-usbstorage on
+screenshot ../build/sim/usb-storage-nousb.png
+tap F8
+wait 300
+expect-usbstorage off
+# On from the Config row (Config, Down x3 = USB, Right, Enter, Down = On, Apply).
+tap CONFIG
+tap UP
+tap UP
+tap UP
+tap UP
+tap DOWN
+tap DOWN
+tap DOWN
+tap RIGHT
+tap F8
+tap DOWN
+tap F8
+wait 100
+expect-usbstorage on
+# The computer mounts the drive: Exit first shows the eject reminder.
+usbhost inuse
+wait 100
+tap F8
+wait 100
+expect-usbstorage on
+expect-usbwarn on
+screenshot ../build/sim/usb-storage-eject.png
+# The computer ejects: the next Exit leaves; the Workspace reloads.
+usbhost ejected
+wait 100
+expect-usbwarn off
+tap F8
+wait 300
+expect-usbstorage off
+# Off from the script while in use: leaves at once.
+usbstorage on
+usbhost inuse
+wait 100
+usbstorage off
+wait 300
+expect-usbstorage off

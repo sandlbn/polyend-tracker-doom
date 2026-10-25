@@ -1,0 +1,48 @@
+# s42_automation_newfont.scene — Snapshot_042 (W2 / W5) (docs/VISUAL_DIFF_1.9.4.md Part 2 §11).
+# Part 2 shots were taken on "B1t Crunch3r - Dimension X" (not in the
+# fixtures): checks on its content are @content. Themes and fonts are set
+# with the sim's "theme N" / "font N" script lines (no Config key flow).
+stock Snapshot_042.png
+project Jude Frankum - Chill Out Room
+script
+  wait 300
+  theme 2
+  font 1
+  tap INSTRPARAMS x2   # Parameters -> Automation 2/2
+end
+region title.text @font
+  bbox 9 8 223 22 1
+region instr.name @font @content
+  bbox ~500 9 789 22 2
+region focus
+  row 31 1 198 DD2020 4
+  row 422 1 198 DD2020 4
+  fill 198 32 198 421 DD2020 4
+region sel
+  row 60 204 295 C9C9CA 4
+  row 87 204 295 C9C9CA 4
+  row 60 4 195 C9C9CA 4
+region text @font
+  bbox 14 43 58 52 1
+  bbox 214 70 269 82 1
+  bbox 14 124 134 133 1
+region bars @content
+  fill 512 39 587 408 C9C9CA 2
+  fill 712 39 787 408 C9C9CA 2
+  fill 612 224 687 408 C9C9CA 2
+  fill 612 40 687 220 000000 1
+  row 408 312 387 C9C9CA 4
+  row 408 412 487 C9C9CA 4
+  pix 511 200 5D5D5D 10
+  pix 588 200 5D5D5D 10
+region bar
+  fill 0 425 799 437 000000 1
+region bar.labels @font
+  bbox 33 451 46 456 1
+  bbox 153 451 166 456 1
+  bbox 234 438 267 450 1
+  bbox 329 438 372 447 1
+region bar.values @font @content
+  bbox 215 457 286 471 1
+  bbox 325 457 376 468 1
+  bbox 536 457 564 468 1

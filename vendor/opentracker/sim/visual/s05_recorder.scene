@@ -1,0 +1,98 @@
+# Snapshot_005: Sample Recorder, source Radio (VISUAL_DIFF §3.4). Seven column
+# panels mirroring the bar; source list focused. Source Radio, Radio Freq
+# 103.7 and Gain 68 come from the stock project. @content: the radio needle /
+# frequency bar and the live level meter (the sim has no radio and no line
+# input), and Monitor: the stock project file stores monitor 0 (Off) at 0x139,
+# but the stock card showed On (its Workspace state, not on the card).
+stock Snapshot_005.png
+project Jude Frankum - Chill Out Room
+script
+  wait 300
+  tap DOWN x13
+  tap SAMPLERECORDER
+  wait 2500
+end
+
+region title.bg
+  fill 170 0 295 25 080808 2
+  fill 480 0 799 25 080808 2
+region title.sep
+  row 27 0 799 1D1D1D 3
+  row 28 0 799 8F8F8F 3
+region title.text @font
+  bbox 10 8 156 22 1
+region transport.time @font
+  bbox 300 8 358 19 1
+region transport.icon
+  fill 376 9 378 18 FFFFFF 8
+  fill 381 9 383 18 FFFFFF 8
+
+region panel.focus
+  row 31 1 98 CD1818 3
+  fill 1 40 1 400 CD1818 3
+  fill 98 40 98 400 CD1818 3
+region panel.fill
+  fill 202 40 398 400 0A0A0A 1
+  fill 102 40 109 400 0A0A0A 1
+  fill 702 40 798 400 0A0A0A 1
+  fill 610 100 690 400 0A0A0A 1
+region panel.gaps
+  fill 400 40 401 400 050505 2
+  fill 500 40 501 400 050505 2
+  fill 600 40 601 400 050505 2
+  fill 700 40 701 400 050505 2
+region panel.shadow
+  pix 150 414 090909 1
+  pix 150 417 070707 1
+  pix 150 421 030303 1
+region source.sel
+  fill 5 64 5 84 FFFFFF 4
+  fill 95 64 95 84 FFFFFF 30
+region source.text @font
+  bbox 15 95 ~80 ~108 1
+region radio.bar @content
+  pix 150 116 7A7A7A 6
+  fill 113 130 188 400 FFFFFF 2
+  fill 119 40 188 110 080808 1
+region level.meter @content
+  fill 413 200 488 400 30CB3F 3
+region gain.bar
+  fill 513 200 588 400 FFFFFF 2
+region monitor.sel @content
+  fill 605 33 605 60 FFFFFF 4
+  fill 696 33 696 60 FFFFFF 4
+  row 33 608 693 FFFFFF 30
+
+region bar.strip
+  row 430 1 701 0A0A0A 2
+region bar.sep
+  fill 100 438 100 479 464646 3
+  fill 200 438 200 479 464646 3
+  fill 300 438 300 479 464646 3
+  fill 400 438 400 479 464646 3
+  fill 500 438 500 479 464646 3
+  fill 600 438 600 479 464646 3
+  fill 700 438 700 479 464646 3
+region bar.record
+  fill 703 425 797 440 CD1818 2
+  fill 703 470 797 479 CD1818 2
+region bar.seek
+  bbox 242 446 257 458 1
+  bbox 342 446 357 458 1
+region bar.labels @font
+  bbox 30 436 72 446 1
+  bbox 432 446 469 456 1
+  bbox 537 436 563 446 1
+  bbox 625 436 674 446 1
+region bar.values @font
+  bbox 112 456 188 467 1
+# F1 value: stock "Radio"; the sim has no radio driver, so the source shows
+# "n/a" (recorder_test radio_unavailable) -- content, not layout.
+region bar.values.source @font @content
+  bbox 26 456 73 467 1
+region bar.values.content @font
+  bbox 541 456 558 467 1
+  bbox 641 456 658 467 1 @content
+
+region diff.bar @font
+  diff 0 425 700 479 15

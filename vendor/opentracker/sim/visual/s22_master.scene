@@ -1,0 +1,45 @@
+# Snapshot_022: VISUAL_DIFF Part 2 §11 block s22_master (W6). Boots the stock
+# fixture project; 015-042 show "B1t Crunch3r - Dimension X", so its
+# project-dependent content is tagged @content.
+stock Snapshot_022.png
+project Jude Frankum - Chill Out Room
+script
+  wait 300
+  tap MASTER
+end
+region title.text @font
+  bbox 9 8 107 20 1
+region master.focus
+  row 31 1 98 CD1818 4
+  row 422 1 98 CD1818 4
+  fill 1 32 1 421 CD1818 4
+  fill 98 32 98 421 CD1818 4
+region master.volume @content
+  fill 13 100 88 400 FFFFFF 2
+  row 86 19 88 7A7A7A 8
+  fill 20 40 89 85 080808 1
+  pix 11 200 090909 2
+  pix 90 200 090909 2
+region master.widepanel
+  fill 102 40 499 400 0A0A0A 1
+  fill 101 40 101 400 050505 2
+region master.list.sel
+  row 33 505 596 FFFFFF 4
+  row 60 505 596 FFFFFF 4
+region master.list.text @font
+  bbox 515 41 585 54 1
+  bbox 515 149 562 159 1
+region master.bassboost @content
+  fill 620 40 689 406 080808 1
+  row 408 613 688 FFFFFF 4
+region master.space @content
+  fill 713 40 788 408 FFFFFF 2
+region bar.labels @font
+  bbox 27 436 73 446 1
+  bbox 128 446 171 456 1
+  bbox 443 446 457 457 1
+  bbox 516 436 584 446 1
+region bar.values @font @content
+  bbox 17 456 84 467 1
+  bbox 506 456 593 470 1
+  bbox 746 456 754 467 1

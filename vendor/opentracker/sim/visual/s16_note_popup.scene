@@ -1,0 +1,34 @@
+# s16_note_popup.scene — Snapshot_016 (W3 / W2) (docs/VISUAL_DIFF_1.9.4.md Part 2 §11).
+# Tags: @font = depends on font metrics, @content = the stock card shows
+# another project (B1t Crunch3r - Dimension X from Snapshot_015 on).
+stock Snapshot_016.png
+project Jude Frankum - Chill Out Room
+script
+  wait 300
+  press NOTE
+  wait 600             # > 500 ms
+end
+region popup.header
+  fill 2 0 11 26 FFFFFF 2
+  fill 70 0 797 26 FFFFFF 2
+  row 27 2 797 B5B5B5 6
+region popup.header.text @font
+  bbox 12 8 60 19 1
+region popup.bg
+  fill 0 28 799 126 000000 1
+  fill 0 387 799 479 000000 1
+  fill 76 200 77 385 000000 6
+region keys.fill @font
+  fill 78 130 138 154 0A0A0A 1
+  fill 13 195 73 219 0A0A0A 1
+  fill 728 361 788 385 0A0A0A 1
+  pix 78 129 050505 3
+region keys.sel @content
+  row 129 12 74 CD1818 4
+  row 191 12 74 CD1818 4
+  fill 12 130 12 190 CD1818 4
+  fill 74 130 74 190 CD1818 4
+region keys.text @font
+  bbox 36 155 50 165 1
+  bbox 96 155 119 165 1
+  bbox 751 350 765 360 1

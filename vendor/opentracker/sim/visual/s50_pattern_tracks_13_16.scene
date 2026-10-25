@@ -1,0 +1,51 @@
+# s50_pattern_tracks_13_16.scene — 2.x M1 (docs/M1_PLAN.md §4, 2x-01 §2.1):
+# Pattern editor scrolled to tracks 13..16. No stock reference (stock has 12
+# tracks): self-consistency checks. The window keeps the stock 4-track
+# geometry of s13 (Midi 9..12): tab x 28 + 186 v, rec cursor in the last
+# column, same row bands; tracks 13..16 of a 1.9.x (12-track) project are
+# empty after the load upgrade, so every cell shows the dash rule.
+stock none
+project Jude Frankum - Chill Out Room
+script
+  wait 300
+  tap REC
+  tap RIGHT x60        # 15 tracks x 4 columns -> Midi 16, note column
+end
+region grid.tabs.13_16
+  fill 28 30 98 33 575757 3       # tab of "Midi 13" (at least the s13 "Midi 9" width)
+  fill 106 30 200 33 080808 3      # no tab past the name
+  fill 214 30 284 33 575757 3       # tab of "Midi 14" (at least the s13 "Midi 9" width)
+  fill 292 30 386 33 080808 3      # no tab past the name
+  fill 400 30 470 33 575757 3       # tab of "Midi 15" (at least the s13 "Midi 9" width)
+  fill 478 30 572 33 080808 3      # no tab past the name
+  fill 586 30 656 33 575757 3       # tab of "Midi 16" (at least the s13 "Midi 9" width)
+  fill 664 30 758 33 080808 3      # no tab past the name
+region grid.tabs.text @font
+  bbox 31 35 ~95 46 1
+  bbox 217 35 ~281 46 1
+  bbox 403 35 ~467 46 1
+  bbox 589 35 ~653 46 1
+region grid.cursor.rec               # s13 geometry: the last column, note cell
+  fill 587 212 627 222 CD1818 4
+  row 210 587 768 CD1818 6
+  row 235 587 768 CD1818 6
+  fill 768 213 768 233 CD1818 6
+region grid.left.normal
+  fill 100 212 200 222 0E0E0E 2
+region grid.empty.dashes             # step 2 row: every column of 13..16 shows its dash rule
+  row 249 36 41 01322D 8
+  row 249 80 85 3D3418 8
+  row 249 114 119 2C1C33 8
+  row 249 168 173 15303C 8
+  row 249 222 227 01322D 8
+  row 249 266 271 3D3418 8
+  row 249 300 305 2C1C33 8
+  row 249 354 359 15303C 8
+  row 249 408 413 01322D 8
+  row 249 452 457 3D3418 8
+  row 249 486 491 2C1C33 8
+  row 249 540 545 15303C 8
+  row 249 594 599 01322D 8
+  row 249 638 643 3D3418 8
+  row 249 672 677 2C1C33 8
+  row 249 726 731 15303C 8

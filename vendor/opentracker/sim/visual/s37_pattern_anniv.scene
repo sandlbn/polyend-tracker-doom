@@ -1,0 +1,59 @@
+# s37_pattern_anniv.scene — Snapshot_037 (W2 / W3) (docs/VISUAL_DIFF_1.9.4.md Part 2 §11).
+# Part 2 shots were taken on "B1t Crunch3r - Dimension X" (not in the
+# fixtures): checks on its content are @content. Themes and fonts are set
+# with the sim's "theme N" / "font N" script lines (no Config key flow).
+stock Snapshot_037.png
+project Jude Frankum - Chill Out Room
+script
+  wait 300
+  theme 2              # Anniversary
+  tap PATTERN
+end
+region title.bg
+  fill 100 0 295 25 000000 1
+region title.sep
+  row 27 0 799 111111 3
+  row 28 0 799 6E6E6E 3
+region grid.bg
+  fill 103 30 211 40 080808 1
+  fill 100 108 200 111 0E0E0E 1
+region grid.tabs
+  fill 28 30 100 33 303030 3
+region grid.tabs.text @font
+  bbox 31 35 96 46 1
+  pix 33 35 D0D0D0 24
+region grid.separators
+  fill 27 58 27 208 000000 1
+  fill 213 58 213 208 000000 1
+region grid.dashes @font
+  row 67 114 119 3D3D3D 6
+  row 67 168 173 3D3D3D 6
+region grid.cursor
+  row 210 29 210 30CB3F 6
+  fill 30 212 68 216 30CB3F 4
+  pix 35 222 000000 12
+region grid.cursorrow.solid
+  fill 215 212 397 216 222222 1
+  fill 401 230 583 236 222222 1
+  fill 73 213 207 216 222222 1
+  fill 10 212 25 236 222222 1
+  fill 790 212 799 236 222222 1
+  pix 500 205 080808 1
+  pix 500 242 080808 1
+  row 210 213 799 8A8728 6
+region grid.stepcols @font
+  bbox 3 61 22 71 1
+  pix 10 71 C9C9CA 40
+region bar.strip
+  fill 0 423 799 435 000000 1
+  fill 100 438 100 479 000000 1
+  fill 700 438 700 479 000000 1
+region bar.no.underline
+  row 474 10 90 000000 1
+  row 474 310 390 000000 1
+region bar.labels @font
+  bbox 26 436 75 446 1
+  pix 27 436 FFFFFF 40
+region bar.disabled @font
+  bbox 338 446 363 456 1
+  pix 338 446 303030 40

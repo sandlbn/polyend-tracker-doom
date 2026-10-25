@@ -1,0 +1,93 @@
+# Snapshot_011: Instrument Parameters 1/2 (VISUAL_DIFF §3.10). Volume column
+# focused, white 76-px bars in 80-px wells, bipolar centre lines, Filter Type
+# list. Stock instrument "Bass02" (stock project) uses High-pass / cutoff 35.
+stock Snapshot_011.png
+project Jude Frankum - Chill Out Room
+script
+  wait 300
+  tap DOWN x13
+  tap INSTRPARAMS
+  wait 300
+end
+
+region title.sep
+  row 27 0 799 1D1D1D 3
+  row 28 0 799 8F8F8F 3
+region title.text @font
+  bbox 9 8 257 20 1
+region transport.time @font
+  bbox 300 8 358 19 1
+region transport.icon
+  fill 376 9 378 18 FFFFFF 8
+  fill 381 9 383 18 FFFFFF 8
+region instr.name @font
+  bbox ~560 ~4 786 ~23 2
+
+region panel.focus
+  row 31 1 98 CD1818 3
+  fill 1 40 1 400 CD1818 3
+  fill 98 40 98 400 CD1818 3
+  row 422 1 98 CD1818 3
+region panel.gaps
+  fill 199 40 200 400 050505 2
+  fill 299 40 300 400 050505 2
+  fill 399 40 400 400 050505 2
+  fill 499 40 500 400 050505 2
+  fill 599 40 600 400 050505 2
+  fill 699 40 700 400 050505 2
+region panel.shadow
+  pix 150 414 090909 1
+  pix 150 417 070707 1
+  pix 150 421 030303 1
+region panel.fill
+  fill 702 40 798 400 0A0A0A 1
+region volume.bar
+  fill 12 230 87 400 FFFFFF 2
+  row 223 12 87 7A7A7A 8
+  fill 19 40 88 215 080808 1
+region well.empty
+  fill 119 300 188 400 080808 1
+  pix 111 300 000000 1
+  pix 115 300 040404 1
+region bipolar.line
+  row 224 112 187 FFFFFF 4
+  row 224 212 287 FFFFFF 4
+  row 224 312 387 FFFFFF 4
+  pix 150 223 7A7A7A 6
+region filter.list @font
+  bbox 414 41 475 51 1
+region filter.sel
+  fill 404 87 404 114 FFFFFF 4
+region cutoff.bar
+  fill 512 290 587 400 FFFFFF 2
+
+region bar.strip
+  row 430 1 798 050505 2
+region bar.sep
+  fill 100 438 100 479 434343 3
+  fill 200 438 200 479 434343 3
+  fill 300 438 300 479 434343 3
+  fill 400 438 400 479 434343 3
+  fill 500 438 500 479 434343 3
+  fill 600 438 600 479 434343 3
+  fill 700 438 700 479 434343 3
+region bar.labels @font
+  bbox 28 436 73 446 1
+  bbox 125 436 174 449 1
+  bbox 236 436 265 446 1
+  bbox 322 436 379 446 1
+  bbox 410 436 490 449 1
+  bbox 530 436 572 446 1
+  bbox 618 436 683 446 1
+  bbox 736 436 765 446 1
+region bar.values @font
+  bbox 16 456 83 467 1
+  bbox 146 456 153 467 1
+  bbox 246 456 253 467 1
+region bar.pagedots
+  fill 743 462 745 464 777777 6
+  fill 755 462 759 464 323132 6
+  pix 751 463 050505 2
+
+region diff.bar @font
+  diff 0 425 799 479 15

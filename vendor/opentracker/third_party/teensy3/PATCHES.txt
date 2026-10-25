@@ -1,0 +1,40 @@
+OpenTracker changes to the vendored PJRC Teensy 3.x core (upstream commit in
+UPSTREAM_COMMIT). Everything else in this directory is unmodified.
+
+1. usb_desc.h, USB_MIDI_SERIAL section: when OT_USB_VID and OT_USB_PID are
+   defined (reimpl/Makefile passes them), use that VID/PID and the strings
+   "OpenTracker" / "OpenTracker" instead of PJRC's 0x16C0/0x0489
+   "Teensyduino" / "Teensy MIDI" (PJRC's IDs are licensed for genuine Teensy
+   boards only). Marked "OPENTRACKER PATCH". Without the -D flags the file
+   behaves exactly like upstream.
+   Current IDs: 0x1209/0x0001 = pid.codes test PID. TODO: register a real
+   pid.codes PID before any public release.
+
+2. USB mass storage (OpenTracker 2.x USB Storage mode), all marked
+   "OPENTRACKER PATCH" and active only with -DOT_USB_MSC=1 (reimpl/Makefile
+   default; OT_USB_MSC=0 or undefined compiles exactly the upstream MIDI +
+   Serial device):
+   - usb_desc.h, USB_MIDI_SERIAL section: NUM_ENDPOINTS 7, NUM_INTERFACE 4,
+     MSC_INTERFACE 3 with bulk IN endpoint 6 and bulk OUT endpoint 7 (64 B).
+   - usb_desc.c: the mass-storage interface descriptor (class 08h, subclass
+     06h SCSI transparent, protocol 50h Bulk-Only) after all other interfaces;
+     OT_USB_DESC_HOST_TEST leaves out usb_init_serialnumber() so the host
+     descriptor check (reimpl/tests/usb_desc_test.cpp) can compile the file.
+   - usb_dev.c: a bulk endpoint driver for the two MSC endpoints (packets go by
+     DMA straight into / out of caller segments; explicit DATA0/1 tracking,
+     reset to DATA0 on SET_CONFIGURATION and CLEAR_FEATURE(ENDPOINT_HALT)),
+     the Bulk-Only class requests (Mass Storage Reset, Get Max LUN), and hooks
+     in SET_CONFIGURATION, CLEAR_FEATURE, usb_rx_memory(), the token, SOF and
+     bus-reset paths of usb_isr() so the generic packet code never touches the
+     MSC endpoints.
+   - usb_desc.c, usb_init_serialnumber(): with the MSC interface the serial
+     number string is 20 hex digits from the chip's unique ID (SIM_UIDMH
+     low 16 bits, SIM_UIDML, SIM_UIDL; the factory serial in hex if the UID
+     reads as zero), since Windows' USBSTOR ignores serials shorter than 12
+     hex characters. Without it the upstream 10-digit decimal serial.
+   - usb_msc.h (new, OpenTracker's own, same permissive terms as this
+     directory): the interface of that driver; usb_msc_impl.h (new, same
+     terms): the driver itself, included by usb_dev.c inside its
+     MSC_INTERFACE block and by the host test
+     reimpl/tests/usb_msc_driver_test.cpp against a simulated controller. The protocol layer is
+     reimpl/src/core/usb/msc_bot.* (OpenTracker).

@@ -1,0 +1,49 @@
+# s20_keyboard.scene — Snapshot_020 (W2) (docs/VISUAL_DIFF_1.9.4.md Part 2 §11).
+# Part 2 shots were taken on "B1t Crunch3r - Dimension X" (not in the
+# fixtures): checks on its content are @content. Themes and fonts are set
+# with the sim's "theme N" / "font N" script lines (no Config key flow).
+stock Snapshot_020.png
+project Jude Frankum - Chill Out Room
+script
+  wait 300
+  press F1             # Pattern 10 -> 2 (the stock shot is on Pattern 2)
+  enc -8
+  release F1
+  tap RIGHT x2         # cursor on the FX column: title right text = FX name
+  tap F8 x2            # bar page 3 (names); stock opened it with Shift+F1 (# verify)
+  tap F1               # "Edit Pattern N Name"
+end
+region title.text @font
+  bbox 9 8 198 19 1
+region name.frame
+  row 31 1 798 CD1818 4
+  row 123 1 798 CD1818 4
+  fill 1 32 1 122 CD1818 4
+  fill 798 32 798 122 CD1818 4
+region name.fill
+  fill 4 34 795 40 0A0A0A 1
+  fill 12 42 390 112 080808 1
+  fill 410 42 787 112 080808 1
+  row 41 11 788 090909 2
+region name.cursor
+  fill 400 66 400 88 CD1818 8
+region keys.fill
+  fill 13 143 73 167 0A0A0A 1
+  fill 663 143 788 167 0A0A0A 1
+  fill 468 338 788 362 0A0A0A 1
+  fill 13 375 73 398 0A0A0A 1
+  fill 0 401 799 423 000000 1
+region keys.home
+  fill 208 273 268 296 FFFFFF 2
+  fill 403 273 463 297 FFFFFF 2
+region keys.text @font
+  bbox 681 168 768 182 1
+  bbox 39 168 44 179 1
+region bar.strip
+  row 430 1 798 0A0A0A 2
+  fill 100 438 100 479 464646 3
+region bar.labels @font
+  bbox 33 437 66 447 1
+  bbox 115 437 185 447 1
+  bbox 630 437 672 447 1
+  bbox 736 437 765 447 1

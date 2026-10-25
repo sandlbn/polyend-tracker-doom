@@ -1,0 +1,19 @@
+# Sample Playback playhead (USER_REPORTS_R2 §1c, spec 05 §6: redraw every
+# >= 5 ms): a held pad shows a moving play-position line (redrawn every
+# frame while it moves); it disappears when the sample has stopped.
+wait 300
+tone-sample 1 88200
+tap SAMPLEPLAYBACK
+expect-screen Sample Playback
+expect-playhead off
+pad 0 down
+wait 50
+expect-playhead on
+fps-reset
+wait 300
+expect-fps 25
+expect-playhead on
+screenshot ../build/sim/playhead-oneshot.png
+pad 0 up
+wait 2500
+expect-playhead off

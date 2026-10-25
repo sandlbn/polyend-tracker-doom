@@ -1,0 +1,57 @@
+# Snapshot_006 (round 3): Master Reverb, Size focused; Line In muted on
+# the Global Mixer, so the Line in send is disabled.
+# Round-3 stock shot (owner's unit, firmware 1.9.2, Display theme
+# Monochrome, project "OT Test 01 - Twelve Tracks"; 2.x tools/make_testsongs).
+# The scene boots the fixture project "Jude Frankum - Chill Out Room", so
+# checks on project values / names are @content. Theme 1 = Monochrome.
+stock round3/Snapshot_006.png
+project Jude Frankum - Chill Out Room
+script
+  wait 300
+  theme 1              # Monochrome (the round-3 shots)
+  tap MASTER x3        # Global Mixer: mute Line In (the shot's state)
+  tap F4
+  tap MASTER           # -> Master 1/3
+  tap F2
+end
+region title.bg
+  fill 150 0 290 25 B9B9BA 2
+  fill 480 0 799 25 B9B9BA 2
+region title.sep
+  row 28 0 799 C2C2C3 4
+region title.text @font
+  bbox 9 8 137 20 1
+region reverb.focus
+  row 31 1 98 DD2020 4
+  row 422 1 98 DD2020 4
+  fill 1 32 1 421 DD2020 4
+  fill 98 32 98 421 DD2020 4
+region reverb.bars @content
+  fill 13 200 88 400 C9C9CA 2
+  fill 113 250 188 400 C9C9CA 2
+  fill 213 250 288 400 C9C9CA 2
+  fill 313 120 388 400 C9C9CA 2
+region reverb.bar.edges
+  row 409 13 88 7E7E7E 8
+  row 409 313 388 7E7E7E 8
+  fill 113 40 188 180 3E3E3E 1
+region reverb.linein.disabled
+  row 408 413 488 303030 6
+  fill 413 40 488 405 3E3E3E 1
+region reverb.rightpanel
+  fill 502 40 798 400 3E3E3E 1
+region bar.labels @font
+  bbox 36 436 65 446 1
+  bbox 124 436 176 449 1
+  bbox 221 436 280 449 1
+  bbox 318 436 382 446 1
+region bar.values @font @content
+  bbox 41 456 58 467 1
+  bbox 341 456 358 467 1
+region bar.linein.disabled
+  fill 410 434 490 470 4B4B4B 30
+region bar.back @font
+  bbox 736 436 764 446 1
+region bar.empty
+  fill 502 438 598 479 4B4B4B 2
+  fill 602 438 698 479 4B4B4B 2

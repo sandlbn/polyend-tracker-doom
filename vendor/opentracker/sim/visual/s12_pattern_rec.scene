@@ -1,0 +1,42 @@
+# s12_pattern_rec.scene — Snapshot_012 (W3) (docs/VISUAL_DIFF_1.9.4.md Part 2 §11).
+# Tags: @font = depends on font metrics, @content = the stock card shows
+# another project (B1t Crunch3r - Dimension X from Snapshot_015 on).
+stock Snapshot_012.png
+project Jude Frankum - Chill Out Room
+script
+  wait 300
+  tap REC
+end
+region title.text @font
+  bbox 9 8 106 19 1
+region transport.time @font
+  bbox 300 8 358 19 1
+region instr.name @font @content
+  bbox ~560 8 786 19 2
+region grid.cursor.rec
+  fill 29 212 69 222 CD1818 4
+  fill 29 224 69 234 CD1818 4
+  row 210 29 210 CD1818 6
+  row 235 29 210 CD1818 6
+  fill 210 213 210 233 CD1818 6
+  pix 28 222 B61515 12
+  pix 211 222 B71616 12
+region grid.cursor.text @font
+  row 223 36 41 F8E0E0 12
+region grid.fold
+  row 210 214 798 8A8728 6
+  row 236 213 798 000000 2
+  pix 500 202 060606 1
+  pix 500 243 050505 1
+region bar.underline
+  row 474 10 90 1F7427 4
+  row 474 310 390 751212 4
+  row 474 610 690 751212 4
+region bar.rec.enabled @font
+  bbox 337 446 364 456 1
+  bbox 536 446 566 456 1
+  bbox 635 446 665 456 1
+region bar.rec.colour @font
+  pix 338 452 777777 40
+region diff.bar @font
+  diff 0 425 799 479 15

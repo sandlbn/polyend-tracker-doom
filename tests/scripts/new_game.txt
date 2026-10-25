@@ -1,0 +1,23 @@
+# F1 (menu) -> encoder push on "New Game" -> episode -> skill (Hurt me plenty:
+# two encoder detents down from the default), then walk forward with Up while
+# holding Shift (run), turn with the encoder, pick the shotgun slot (pad 2)
+# and fire with Play.
+40 button 0 1
+41 button 0 0
+60 button 33 1
+61 button 33 0
+80 button 33 1
+81 button 33 0
+100 button 33 1
+101 button 33 0
+180 button 29 1
+180 button 26 1
+260 button 26 0
+260 enc 6
+280 button 26 1
+320 button 26 0
+320 button 29 0
+330 pad 1 1
+331 pad 1 0
+340 button 23 1
+350 button 23 0

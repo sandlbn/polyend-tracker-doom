@@ -1,0 +1,6 @@
+[submodule "vendor/opentracker"]
+	path = vendor/opentracker
+	url = https://github.com/sandlbn/polyend-tracker-re.git
+[submodule "vendor/doomgeneric"]
+	path = vendor/doomgeneric
+	url = https://github.com/ozkl/doomgeneric

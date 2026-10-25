@@ -1,0 +1,48 @@
+# Snapshot_010 (round 3): Global Mixer 3/3, Line In muted.
+# 2.x: Global Mixer 3/3 also has Synth 1-3 columns over F5..F7, so the
+# 1.9.x regions for x >= 400 (empty right panel, empty bar) are dropped here;
+# s55_global_mixer_synths covers the synth columns.
+# Round-3 stock shot (owner's unit, firmware 1.9.2, Display theme
+# Monochrome, project "OT Test 01 - Twelve Tracks"; 2.x tools/make_testsongs).
+# The scene boots the fixture project "Jude Frankum - Chill Out Room", so
+# checks on project values / names are @content. Theme 1 = Monochrome.
+stock round3/Snapshot_010.png
+project Jude Frankum - Chill Out Room
+script
+  wait 300
+  theme 1              # Monochrome (the round-3 shots)
+  tap MASTER x3
+  tap F4               # mute Line In (the shot's state)
+end
+region title.bg
+  fill 200 0 290 25 B9B9BA 2
+  fill 480 0 799 25 B9B9BA 2
+region title.sep
+  row 28 0 799 C2C2C3 4
+region title.text @font
+  bbox 9 8 167 20 1
+region mixer.headers
+  fill 2 32 98 38 B9B9BA 2
+  fill 302 32 398 38 B9B9BA 2
+  fill 302 55 398 58 B9B9BA 2
+region mixer.header.text @font
+  bbox 25 40 74 54 1
+  bbox 316 40 384 51 1
+region mixer.fader @content
+  fill 13 220 23 400 C9C9CA 2
+  fill 213 130 223 400 C9C9CA 2
+region mixer.meters
+  row 408 45 55 30CB3F 4
+  row 408 77 87 30CB3F 4
+region mixer.linein.fader @content
+  fill 313 130 323 400 303030 4
+region mixer.linein.muted
+  row 408 345 355 303030 4
+  row 408 377 387 303030 4
+region bar.labels @font @content
+  bbox 15 436 86 446 1
+  bbox 31 456 69 467 1
+region bar.linein.disabled
+  fill 312 434 388 448 4B4B4B 30
+region bar.linein.unmute
+  fill 312 452 388 472 4B4B4B 30

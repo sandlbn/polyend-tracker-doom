@@ -1,0 +1,63 @@
+# Snapshot_030: Config > General > Pads preview picker (VISUAL_DIFF §8.19,
+# Part 2 §11). Help panel + picker list inside one red focus frame, strip
+# 050505 with separators only at 200 / 600 / 700. The help text is our own
+# (config_help.cpp), so only its left / top edges are checked.
+stock Snapshot_030.png
+project Jude Frankum - Chill Out Room
+script
+  wait 300
+  tap CONFIG
+  tap F2               # category General
+  # The first F6 moves the focus to the item list (sim behaviour, spec 06
+  # §7.4), so one more tap than the Part 2 draft: x6 = "Pads preview"
+  # (031: x7, 032: x8, 033: x9).
+  tap F6 x6
+  tap F8               # Enter -> picker
+end
+region category.list
+  fill 1 107 198 120 0A0A0A 1
+  row 60 4 195 FFFFFF 4
+  row 87 4 195 FFFFFF 4
+region category.text @font
+  bbox 14 41 140 54 1
+  bbox 14 68 68 78 1
+region picker.focus
+  row 31 201 598 CD1818 4
+  row 422 201 598 CD1818 4
+  fill 201 32 201 421 CD1818 4
+  fill 598 32 598 421 CD1818 4
+region help.panel
+  fill 204 300 399 400 0A0A0A 1
+  fill 400 40 400 400 080808 2
+  fill 401 300 595 400 0A0A0A 1
+region help.caption @font
+  bbox 215 40 304 53 1
+region help.text @font
+  bbox 215 68 ~395 ~215 2
+# The picker cursor starts on the current value: the stock device had
+# "Off", the sim's config card has "Pattern" (global config, not project).
+region picker.sel @content
+  row 60 404 595 FFFFFF 4
+  fill 404 34 404 60 FFFFFF 4
+  fill 595 34 595 60 FFFFFF 4
+region picker.text @font
+  bbox 414 41 436 51 1
+  bbox 414 68 452 78 1
+  bbox 414 95 468 105 1
+region bar.strip.dark
+  row 430 1 798 050505 2
+  fill 200 438 200 479 434343 3
+  fill 600 438 600 479 434343 3
+  fill 700 438 700 479 434343 3
+  fill 100 462 100 479 050505 2
+  fill 400 462 400 479 050505 2
+region bar.wide @font
+  bbox 13 451 26 456 1
+  bbox 173 451 186 456 1
+  bbox 75 446 125 456 1
+  bbox 243 451 256 456 1
+  bbox 543 451 556 456 1
+  bbox 355 446 444 459 1
+region bar.labels @font
+  bbox 630 446 672 456 1
+  bbox 732 446 769 459 1

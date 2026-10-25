@@ -1,0 +1,73 @@
+# bench-m4 baseline (make -C tests bench-m4: QEMU mps2-an386 -icount, device compiler flags).
+# Executed Cortex-M4 instructions per 128-frame audio block. make perf-gate fails when a
+# scenario exceeds its baseline by more than 5 %. Update this file in the same commit as a
+# deliberate change, with the reason. "-" = placeholder: the scenario is not in the bench
+# yet (reported, never fails); give it a number once audio_bench prints it.
+# Recorded 2026-10-16 on branch 2.x at 2.0.0 (M0), before any 2.x audio change.
+# stereo8 added with the M2 stereo voice path (WP-D): play8 with stereo instruments,
+# limit play8 + 24 % (docs/MINI_PLAN.md §2); 187917 = play8 + 21.4 %.
+# synth4 added with the M3 synth framework (WP-E): 4 voices of the internal test
+# engine in Synth 1 with a reverb send (includes reverb + limiter); framework
+# overhead 2935 insn/block (<= 3k). WP-F re-baselines it with the real engines.
+# vapinit / vapworst added with the VAP engine (WP-F): one VAP voice per block incl.
+# prepare (OPTIMIZATION_2X item 10 limits: Init <= 12k, worst <= 18k).
+# mix added with WP-H: stereo8 + 4 worst-case ACD voices + the costly PERC kit (six
+# drums hit every 32 blocks), real engines through renderLive; est. 68.7 % of the
+# block budget (peak hit block 71.5 %). The per-engine limit lines (acd.* / vap* /
+# perc*, "limit N") are gated in absolute terms by tools/telemetry_check.py.
+# OP-1..OP-3 (optimization pass part 2, 2.x): reverb in block passes (29.4k ->
+# 19.2k), fused voice chains + send-clamp skip, LDM/STM span copies, word-wise
+# mem*; every number below improved (render / mono hashes unchanged). mix now
+# runs at the default synth voice budget 4 (was budget 5: 286064); mix5 / mix6
+# are budgets 5 and 6. pswitch = the block with an immediate pattern switch
+# (stage buffer, pointer swap; the switch delta is gated as pswitch.d <= 40k
+# est. cycles).
+# 2.0.0 hardware round (CPU spikes, docs/OPTIMIZATION_2X.md "2.0.0 hardware round"):
+# peakavg / peak = song 5 replayed from its trace (tests/peak_trace.cpp) through
+# fillCallback, positions 0-2 (8100 blocks): average and worst block. Before the
+# note-on spreading / same-block steal change: peak 257600 (bar start of "Sixteen-track
+# chords"), avg 143535. play8 / worst / stereo8 / mix* / pswitch re-recorded (-0.1..-1.0 %,
+# the governor / profile code moved the layout); idle / idle2 / synth4 kept (+0.3..0.7 %:
+# the block-profile checks and the start counter, within the 5 % rule).
+# fatinit / fatworst / mixfat (2.1, FAT engine, docs/specs/2x-07-fat-engine.md): one FAT
+# voice per block incl. prepare, Init patch and the costliest settings (limits: Init <= 12k,
+# worst <= 22k), and the mix set with 4 worst-case FAT voices in Synth 1 instead of ACD.
+# Recorded with the complete engine (FAT M3): mixfat est. 62.2 % of the block budget (peak
+# block 63.4 %); the existing scenarios did not move (FAT code is not on their paths).
+# fatworst re-recorded (FAT review follow-ups): measured at pitch ~108 (glide 108 -> 96;
+# polyBLEP event cost grows with pitch), was 16110 at 36 -> 60. mixfat unchanged (same
+# patch, its own notes 36..57).
+# Re-baselined 2026-10-21 (2.1.0, owner decision): the delay now reads, filters and writes
+# all three lines every sample like stock (ping-pong switches keep the echo tail; delay
+# 4.6k -> 8.7k insn/block), plus the drift since 2.0.7 (idle / synth4 had been +3.6..4.1 %).
+# Est. load stays inside the budget: mix 64.8 %, peak 59.4 %, alarm 70 %.
+# wtfminit / wtfmworst / mixwtfm (2.2, WTFM engine, docs/specs/2x-08-wtfm-engine.md): one WTFM
+# voice per block incl. prepare, Init patch (limit 12k) and the costliest settings with
+# Oversampling On (limit 32k: the carrier at 2 fs adds ~8k; without it ~22k), and the mix set with
+# 4 worst-case WTFM voices in Synth 1. mixwtfm est. 73 % of the block budget: above the 70 %
+# alarm, so the governor may take a voice in a busy song with four such voices.
+# stream8 (SD streaming P1, docs/PLAN_SD_STREAMING.md): the stereo8 set with 3 s stereo
+# instruments streamed (resident head, the rest through the track rings; the refill is the
+# main loop's work and not timed). Gated absolutely by the stream.lim line: <= stereo8 + 5 %
+# (recorded +4.3 %, 0 underruns).
+idle     11112
+idle2    11470
+play8    145418
+worst    244349
+stereo8  174615
+stream8  182222
+synth4   66860
+vapinit  9027
+vapworst 17150
+fatinit  9224
+fatworst 18679
+mix      257071
+mix5     273064
+mix6     273069
+mixfat   257346
+pswitch  145180
+peakavg  147318
+peak     228560
+wtfminit 9626
+wtfmworst 30214
+mixwtfm  299814

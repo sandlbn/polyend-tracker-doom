@@ -1,0 +1,27 @@
+# Snapshot_027: VISUAL_DIFF Part 2 §11 block s27_file_export (W6). Boots the stock
+# fixture project; 015-042 show "B1t Crunch3r - Dimension X", so its
+# project-dependent content is tagged @content.
+stock Snapshot_027.png
+project Jude Frankum - Chill Out Room
+script
+  wait 300
+  tap FILE
+  tap F6               # sim File menu: F6 = Export
+end
+region title.text @font
+  bbox 9 8 136 22 1
+region panel
+  fill 1 40 799 400 0A0A0A 1
+  pix 400 414 090909 1
+  pix 400 421 030303 1
+region bar.labels @font
+  bbox 29 436 71 449 1
+  bbox 36 456 64 469 1
+  bbox 129 436 171 449 1
+  bbox 113 456 188 469 1
+  bbox 525 456 575 469 1
+  bbox 736 446 764 456 1
+region bar.grey.value
+  pix 37 460 777777 40
+region bar.empty
+  fill 602 438 698 479 0A0A0A 2

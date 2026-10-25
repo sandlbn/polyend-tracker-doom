@@ -1,0 +1,38 @@
+# Snapshot_024: VISUAL_DIFF Part 2 §11 block s24_global_mixer (W6). Boots the stock
+# fixture project; 015-042 show "B1t Crunch3r - Dimension X", so its
+# project-dependent content is tagged @content.
+stock Snapshot_024.png
+project Jude Frankum - Chill Out Room
+script
+  wait 300
+  tap MASTER x3
+end
+region mixer.header.text @font
+  bbox 25 40 74 54 1
+  bbox 215 40 285 54 1
+region mixer.fader @content
+  fill 13 150 23 400 FFFFFF 2
+  pix 11 200 090909 2
+  pix 25 200 090909 2
+region mixer.meters
+  pix 43 200 090909 2
+  pix 57 200 090909 2
+  pix 75 200 090909 2
+  pix 89 200 090909 2
+  row 408 45 55 30CB3F 4
+  row 408 77 87 30CB3F 4
+region mixer.linein.disabled @content
+  fill 313 130 323 400 222222 4
+# 2.x (Tracker Mini manual p.220): Synth 1-3 columns now fill F5..F7 (s55);
+# the empty panel is the F8 column only.
+region mixer.rightpanel
+  fill 705 40 796 400 0A0A0A 1
+  fill 400 40 400 400 000000 2
+region bar.labels @font @content
+  bbox 19 436 81 446 1
+  bbox 31 456 68 467 1
+region bar.disabled @font
+  bbox 324 436 376 446 1
+  pix 330 440 333333 40
+region bar.empty                     # F8 (F5..F7: synth gains, s55)
+  fill 702 438 798 479 0A0A0A 2

@@ -1,0 +1,32 @@
+# New game, then Menu (F1) -> encoder 3 down to "Save Game" -> push -> slot 1
+# -> push: Doom asks for a name. Type "DOOM" on the pads (D = pad 15, O = 26,
+# M = 24), then the encoder one step (M -> N) and push: "DOOMN". F2 = done.
+# The save file must carry the name.
+40 button 0 1
+41 button 0 0
+60 button 33 1
+61 button 33 0
+80 button 33 1
+81 button 33 0
+100 button 33 1
+101 button 33 0
+200 button 0 1
+201 button 0 0
+210 enc 3
+220 button 33 1
+221 button 33 0
+240 button 33 1
+241 button 33 0
+260 pad 15 1
+261 pad 15 0
+265 pad 26 1
+266 pad 26 0
+270 pad 26 1
+271 pad 26 0
+275 pad 24 1
+276 pad 24 0
+280 enc 1
+285 button 33 1
+286 button 33 0
+300 button 1 1
+301 button 1 0

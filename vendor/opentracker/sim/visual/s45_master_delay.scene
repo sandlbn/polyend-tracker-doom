@@ -1,0 +1,79 @@
+# Snapshot_007 (round 3): Master Delay, PingPong focused, Sync Off (Rate
+# list disabled), Line In muted on the Global Mixer (Line in disabled).
+# Round-3 stock shot (owner's unit, firmware 1.9.2, Display theme
+# Monochrome, project "OT Test 01 - Twelve Tracks"; 2.x tools/make_testsongs).
+# The scene boots the fixture project "Jude Frankum - Chill Out Room", so
+# checks on project values / names are @content. Theme 1 = Monochrome.
+stock round3/Snapshot_007.png
+project Jude Frankum - Chill Out Room
+script
+  wait 300
+  theme 1              # Monochrome (the round-3 shots)
+  tap MASTER x3        # Global Mixer: mute Line In (the shot's state)
+  tap F4
+  tap MASTER           # -> Master 1/3
+  tap F3
+  tap F2               # Sync ...
+  enc 1                # ... On -> Off (one row down)
+  tap F1               # PingPong focused, as in the shot
+end
+region title.bg
+  fill 150 0 290 25 B9B9BA 2
+  fill 480 0 799 25 B9B9BA 2
+region title.sep
+  row 28 0 799 C2C2C3 4
+region title.text @font
+  bbox 9 8 128 22 1
+region delay.focus
+  row 31 1 98 DD2020 4
+  row 422 1 98 DD2020 4
+  fill 1 32 1 421 DD2020 4
+region delay.onoff.order @font
+  bbox 16 41 28 51 1
+  bbox 15 68 37 78 1
+  bbox 116 41 128 51 1
+  bbox 115 68 137 78 1
+region delay.onoff.sel
+  row 60 5 95 C9C9CA 4
+  row 87 5 95 C9C9CA 4
+  row 60 105 196 C9C9CA 4
+  row 87 105 196 C9C9CA 4
+  row 34 10 90 3E3E3E 12
+  row 33 110 190 3E3E3E 12
+region delay.rate.disabled
+  row 33 206 289 7E7E7E 6
+  row 60 206 289 7E7E7E 6
+  fill 205 33 205 60 7E7E7E 6
+  fill 210 92 245 106 3E3E3E 20
+  fill 210 360 245 400 3E3E3E 20
+region delay.rate.scroll
+  fill 293 37 296 416 7E7E7E 60
+  fill 292 60 292 400 5B5B5B 12
+  fill 297 60 297 400 5B5B5B 12
+region delay.bars @content
+  fill 313 300 388 400 C9C9CA 2
+  fill 413 310 488 400 C9C9CA 2
+  fill 513 39 588 408 C9C9CA 2
+region delay.linein.disabled
+  row 408 613 688 303030 6
+  fill 613 40 688 405 3E3E3E 1
+region delay.back.panel
+  fill 702 40 798 400 3E3E3E 1
+region bar.labels @font
+  bbox 20 436 80 449 1
+  bbox 137 436 165 449 1
+  bbox 335 436 366 446 1
+  bbox 419 436 480 446 1
+  bbox 529 436 571 446 1
+region bar.rate.disabled
+  fill 210 434 290 470 4B4B4B 30
+region bar.linein.disabled
+  fill 610 434 690 470 4B4B4B 30
+region bar.values @font
+  bbox 36 456 63 467 1
+  bbox 136 456 163 467 1
+region bar.values.content @font @content
+  bbox 322 456 378 467 1
+  bbox 512 456 589 467 1
+region bar.back @font
+  bbox 736 436 764 446 1

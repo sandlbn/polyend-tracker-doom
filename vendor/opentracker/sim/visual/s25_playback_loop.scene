@@ -1,0 +1,64 @@
+# Snapshot_025: Sample Playback, Play Mode = Backward Loop (VISUAL_DIFF Part 2
+# §8.14, block from §11). The stock shot shows instrument 19 of "B1t Crunch3r -
+# Dimension X" (not in the fixtures) at zoom 20.91; here the stock-project
+# instrument 5 is used, so the waveform, the loop markers / flags, the
+# instrument name and the bar values are @content. Layout checks (title,
+# status, play-mode list focus and row frame, 050505 strip with 434343
+# separators, label set and selector arrows) apply unchanged.
+stock Snapshot_025.png
+project Jude Frankum - Chill Out Room
+script
+  wait 300
+  tap DOWN x13
+  tap SAMPLEPLAYBACK
+  tap F8 x2
+  wait 300
+end
+
+region title.text @font
+  bbox 9 8 158 22 1
+region transport.time @font
+  bbox 300 8 358 19 1
+region instr.name @font @content
+  bbox ~480 8 789 19 2
+region wave.black
+  fill 100 30 598 100 000000 1
+  fill 100 350 598 423 000000 1
+region wave.centre @content
+  pix 300 225 909090 40
+  pix 300 226 909090 40
+region loop.markers @content
+  fill 0 120 0 330 FFFFFF 2
+  fill 73 120 73 330 FFFFFF 2
+  row 115 3 70 050505 3
+  row 335 3 70 050505 3
+region loop.flags @content
+  bbox 0 ~107 6 ~113 1
+region list.focus
+  row 31 601 798 CD1818 4
+  row 422 601 798 CD1818 4
+  fill 601 32 601 421 CD1818 4
+  fill 798 32 798 421 CD1818 4
+region list.sel
+  row 87 604 795 FFFFFF 4
+  row 114 604 795 FFFFFF 4
+region list.text @font
+  bbox 614 41 659 51 1
+  bbox 614 230 675 240 1
+region bar.strip.dark
+  row 430 1 798 050505 2
+  fill 100 438 100 479 434343 3
+  fill 600 438 600 479 434343 3
+  fill 700 438 700 479 050505 2
+region bar.labels @font
+  bbox 24 436 76 446 1
+  bbox 134 436 167 446 1
+  bbox 214 436 286 449 1
+  bbox 535 436 565 446 1
+region bar.values @font @content
+  bbox 121 456 178 467 1
+  bbox 527 456 571 467 1
+region bar.wide @font
+  bbox 633 451 646 456 1
+  bbox 753 451 766 456 1
+  bbox 666 446 735 459 1

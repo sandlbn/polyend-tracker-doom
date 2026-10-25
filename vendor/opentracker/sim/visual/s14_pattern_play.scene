@@ -1,0 +1,35 @@
+# s14_pattern_play.scene — Snapshot_014 (W3) (docs/VISUAL_DIFF_1.9.4.md Part 2 §11).
+# Tags: @font = depends on font metrics, @content = the stock card shows
+# another project (B1t Crunch3r - Dimension X from Snapshot_015 on).
+stock Snapshot_014.png
+project Jude Frankum - Chill Out Room
+script
+  wait 300
+  tap PLAY
+  wait 10000
+end
+region transport.time @font
+  bbox 300 8 358 19 1
+region transport.playicon @font
+  bbox 372 5 387 21 1
+region transport.pos @font @content
+  bbox 404 8 471 19 2
+region grid.cursor
+  fill 29 212 69 222 30CB3F 4
+  row 210 29 210 30CB3F 6
+  row 235 29 210 30CB3F 6
+region grid.playhead.trough
+  row 236 213 798 000000 2
+  pix 500 202 060606 1
+  pix 500 207 020202 1
+  pix 500 239 020202 1
+  pix 500 244 060606 1
+  row 210 215 397 0A0A0A 2
+region grid.stepcols @font @content
+  bbox 3 217 15 227 1
+region bar.disabled @font
+  bbox 338 446 363 456 1
+  pix 340 452 333333 40
+region bar.underline
+  row 474 310 390 751212 4
+  row 474 10 90 1F7427 4

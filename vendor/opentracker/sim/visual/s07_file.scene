@@ -1,0 +1,85 @@
+# Snapshot_007: File -> Open Project (VISUAL_DIFF §3.6). SD browser focused at
+# /Projects ("/.." cursor, red row frame), Recent empty with a white frame row.
+# The stock project is open (title: its name) and copied into /Projects, but
+# the stock card's other projects differ from the fixture's (B1t Crunch3r,
+# Blind Method, Das Mortal, Defrag are not on it), so the list length and the
+# scrollbar thumb are @content.
+stock Snapshot_007.png
+project Jude Frankum - Chill Out Room
+script
+  wait 300
+  tap DOWN x13
+  tap FILE
+  tap F2
+  wait 300
+end
+
+region title.bg
+  fill 205 0 295 25 080808 2
+region title.sep
+  row 27 0 799 1D1D1D 3
+  row 28 0 799 8F8F8F 3
+region title.text @font
+  bbox 9 8 196 22 1
+region transport.time @font
+  bbox 300 8 358 19 1
+region transport.icon
+  fill 376 9 378 18 FFFFFF 8
+  fill 381 9 383 18 FFFFFF 8
+region project.name @font
+  bbox ~530 8 789 19 2
+
+region panel.focus
+  row 31 1 298 CD1818 3
+  fill 1 40 1 400 CD1818 3
+  fill 298 40 298 400 CD1818 3
+  row 422 10 290 CD1818 3
+region panel.fill
+  fill 310 100 590 400 0A0A0A 1
+  fill 610 40 790 400 0A0A0A 1
+region panel.gaps
+  fill 599 100 600 400 050505 2
+region panel.shadow
+  pix 450 414 090909 1
+  pix 450 417 070707 1
+  pix 450 421 030303 1
+region caption @font
+  bbox 116 40 184 51 1
+  bbox 421 40 478 51 1
+region sd.cursor
+  fill 4 68 4 88 B71616 30
+  row 65 10 280 CD1818 4
+  row 92 10 280 CD1818 4
+region sd.text @font
+  bbox 15 127 ~260 ~140 1
+region sd.scrollbar
+  pix 294 69 000000 2
+region sd.scrollbar.thumb @content
+  fill 293 80 294 250 333333 4
+  fill 293 300 294 410 000000 2
+region recent.sel
+  fill 304 65 304 92 FFFFFF 4
+  row 65 310 590 FFFFFF 30
+  row 92 310 590 FFFFFF 30
+  fill 310 70 590 88 0A0A0A 1
+
+region bar.strip
+  row 430 1 798 0A0A0A 2
+region bar.sep
+  fill 100 438 100 479 464646 3
+  fill 200 438 200 479 464646 3
+  fill 300 438 300 479 464646 3
+  fill 400 438 400 479 464646 3
+  fill 500 438 500 479 464646 3
+  fill 600 438 600 479 464646 3
+  fill 700 438 700 479 464646 3
+region bar.labels @font
+  bbox 33 446 66 456 1
+  bbox 313 446 387 456 1
+  bbox 630 446 672 456 1
+region bar.disabled @font
+  bbox 228 446 272 456 1
+  bbox 737 446 764 459 1
+
+region diff.bar @font
+  diff 0 425 799 479 15

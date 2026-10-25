@@ -1,0 +1,71 @@
+# Snapshot_008: Sample Playback, Play Mode list focused (F7) (VISUAL_DIFF §3.7).
+stock Snapshot_008.png
+project Jude Frankum - Chill Out Room
+script
+  wait 300
+  tap DOWN x13
+  tap SAMPLEPLAYBACK
+  tap F7
+  wait 300
+end
+
+region title.bg
+  fill 170 0 295 25 080808 2
+  fill 480 0 610 25 080808 2
+region title.sep
+  row 27 0 799 1D1D1D 3
+  row 28 0 799 8F8F8F 3
+region title.text @font
+  bbox 10 8 158 22 1
+region transport.time @font
+  bbox 300 8 358 19 1
+region transport.icon
+  fill 376 9 378 18 FFFFFF 8
+  fill 381 9 383 18 FFFFFF 8
+region instr.name @font
+  bbox ~560 ~4 786 ~23 2
+
+region wave.panel
+  fill 10 31 590 100 000000 1
+  fill 10 342 590 418 000000 1
+region wave.strip
+  fill 560 120 590 200 0A0A0A 3
+region wave.markers
+  pix 0 200 FFFFFF 10
+  pix 598 200 7B7B7B 30
+
+region list.focus
+  row 31 601 798 CD1818 3
+  fill 601 40 601 400 CD1818 3
+  fill 798 40 798 400 CD1818 3
+region list.panel
+  fill 604 250 795 400 0A0A0A 1
+region list.sel
+  fill 604 34 604 60 FFFFFF 4
+  row 59 607 790 E3E3E3 4
+region list.text @font
+  bbox 614 68 ~710 ~81 1
+
+region bar.strip
+  row 430 1 798 050505 2
+region bar.sep
+  fill 100 438 100 479 434343 3
+  fill 200 438 200 479 434343 3
+  fill 300 438 300 479 434343 3
+  fill 400 438 400 479 434343 3
+  fill 500 438 500 479 434343 3
+  fill 600 438 600 479 434343 3
+  fill 700 460 700 479 050505 2
+region bar.labels @font
+  bbox 24 436 76 446 1
+  bbox 134 436 167 446 1
+  bbox 440 436 460 446 1
+  bbox 535 436 565 446 1
+region bar.values @font
+  bbox 121 456 178 467 1
+  bbox 532 456 568 467 1
+region bar.values.content @font
+  bbox 421 456 478 467 1
+
+region diff.bar @font
+  diff 0 425 799 479 15

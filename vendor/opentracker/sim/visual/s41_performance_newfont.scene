@@ -1,0 +1,36 @@
+# s41_performance_newfont.scene — Snapshot_041 (W2 / W6) (docs/VISUAL_DIFF_1.9.4.md Part 2 §11).
+# Part 2 shots were taken on "B1t Crunch3r - Dimension X" (not in the
+# fixtures): checks on its content are @content. Themes and fonts are set
+# with the sim's "theme N" / "font N" script lines (no Config key flow).
+stock Snapshot_041.png
+project Jude Frankum - Chill Out Room
+script
+  wait 300
+  theme 2
+  font 1
+  tap PERFORMANCE
+end
+region title.text @font
+  bbox 9 9 136 20 1
+region bg
+  fill 0 30 799 52 000000 1
+  fill 0 61 799 109 000000 1
+  fill 0 268 799 297 000000 1
+region perf.dashes @font
+  row 57 36 38 C9C9CA 8
+  row 57 46 48 C9C9CA 8
+  row 56 36 38 434343 8
+  row 302 36 38 30CB3F 8
+  row 333 36 38 C9C9CA 8
+  row 395 751 753 C9C9CA 8
+region perf.arrows @font @content
+  bbox 678 53 705 60 1
+  bbox 678 298 705 305 1
+region perf.vlabel @font
+  bbox 38 ~110 53 267 2
+  bbox 169 227 180 267 1
+region bar.labels @font
+  bbox 26 438 72 447 1
+  bbox 27 457 68 468 1
+  bbox 727 457 768 468 1
+  pix 30 442 FFFFFF 40

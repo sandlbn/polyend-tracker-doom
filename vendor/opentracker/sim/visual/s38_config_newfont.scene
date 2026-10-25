@@ -1,0 +1,46 @@
+# s38_config_newfont.scene — Snapshot_038 (W2 / W6); 039 / 040 variants (docs/VISUAL_DIFF_1.9.4.md Part 2 §11).
+# Part 2 shots were taken on "B1t Crunch3r - Dimension X" (not in the
+# fixtures): checks on its content are @content. Themes and fonts are set
+# with the sim's "theme N" / "font N" script lines (no Config key flow).
+stock Snapshot_038.png
+project Jude Frankum - Chill Out Room
+script
+  wait 300
+  theme 2              # Anniversary
+  font 1               # New
+  tap CONFIG
+  tap F2               # General
+  tap F6 x3            # cursor on "Display font"
+end
+region title.sep
+  row 27 0 799 111111 3
+  row 28 0 799 6E6E6E 3
+region title.text @font
+  bbox 9 9 57 23 1
+region transport.time @font
+  bbox 288 8 ~350 20 1
+region bg
+  fill 0 107 198 123 000000 1
+  fill 601 30 799 423 000000 1
+region focus
+  row 31 201 598 DD2020 4
+  row 422 201 598 DD2020 4
+  fill 201 32 201 421 DD2020 4
+  fill 598 32 598 421 DD2020 4
+region sel
+  row 60 4 195 C9C9CA 4
+  row 87 4 195 C9C9CA 4
+  row 114 204 595 C9C9CA 4
+  row 141 204 595 C9C9CA 4
+region text @font
+  bbox 14 43 116 55 1
+  bbox 214 43 289 55 1
+  bbox 546 43 587 55 1
+  pix 15 43 C9C9CA 40
+region bar
+  fill 0 425 799 447 000000 1
+  fill 100 462 100 479 000000 1
+region bar.labels @font
+  bbox 75 448 125 457 1
+  bbox 13 451 26 456 1
+  bbox 733 448 767 457 1

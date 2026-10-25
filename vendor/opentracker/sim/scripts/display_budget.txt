@@ -1,0 +1,260 @@
+# Display budget (docs/PLAN_2X.md performance workstream, run by `make check`):
+# per screen, the largest display-list upload (command-FIFO words per frame,
+# cached fragments count 3 words each) must stay inside the budget, and the
+# screen must look identical with fragments off and on ("fragcheck").
+# Budgets are the measured steady state plus ~20 %; a screen change that
+# needs more must say why (docs/CHANGES_2X.md) and raise its budget here.
+# pattern-play is the scrolling grid (rows are drawn inline every step).
+# Re-measured after the 1.9.5 merge (stock-look screens, custom fonts): the
+# Pattern grid is drawn in colour passes over all rows, so only the title
+# chrome, bar labels, header tabs and separators are fragments; RAM_DL
+# includes the driver's 36 font-setup words (docs/CHANGES_2X.md).
+wait 200
+tap REC
+pad 24 tap
+tap DOWN
+pad 26 tap
+tap DOWN
+tap DOWN
+pad 28 tap
+tap REC
+tap UP
+tap UP
+tap UP
+budget-reset
+wait 300
+budget pattern 940
+fragcheck pattern
+# Playback, cursor follows the playhead (the grid scrolls every step).
+tap PLAY
+wait 200
+budget-reset
+wait 1500
+budget pattern-play 940
+fragcheck pattern-play
+tap PLAY
+wait 100
+# Playback in edit mode: the grid stands still (the chrome is appended).
+tap REC
+tap PLAY
+wait 300
+budget-reset
+wait 1500
+budget pattern-play-edit 920
+fragcheck pattern-play-edit
+tap PLAY
+tap REC
+wait 100
+tap SONG
+wait 300
+budget-reset
+wait 300
+budget song 1150
+fragcheck song
+tap INSTRPARAMS
+wait 300
+budget-reset
+wait 300
+budget instrument 880
+fragcheck instrument
+tap MASTER
+wait 300
+budget-reset
+wait 300
+budget master 680
+fragcheck master
+tap MASTER
+wait 300
+budget-reset
+wait 300
+budget mixer 1900
+fragcheck mixer
+tap CONFIG
+wait 300
+budget-reset
+wait 300
+budget config 850
+fragcheck config
+tap FILE
+wait 300
+budget-reset
+wait 300
+budget file 260
+fragcheck file
+tap SAMPLELOADER
+wait 300
+budget-reset
+wait 300
+budget loader 830
+fragcheck loader
+tap PERFORMANCE
+wait 300
+budget-reset
+wait 300
+budget performance 1950
+fragcheck performance
+tap SAMPLERECORDER
+wait 300
+budget-reset
+wait 300
+budget recorder 700
+fragcheck recorder
+tap SAMPLEPLAYBACK
+wait 300
+budget-reset
+wait 300
+budget playback 170
+fragcheck playback
+tap SAMPLEEDITOR
+wait 300
+budget-reset
+wait 300
+budget editor 160
+fragcheck editor
+# 2.x synth pages while playing (docs/SYNTH_UX_MINI_VS_OT.md): Synth 2 (ACD)
+# and Synth 3 (VAP) of the fresh project, two library patches saved first so
+# the Load Patch popup has a list; the popup is measured over page 1/2 of
+# each slot, with a preview playing.
+tap PATTERN
+wait 200
+press INSTR
+wait 400
+enc -70              # Synth 1 (the first entry)
+enc 1                # Synth 2
+release INSTR
+wait 100
+tap INSTRPARAMS
+wait 200
+tap F8               # Edit Patch: Save As (auto name), Init Patch, Save As
+tap F2
+wait 100
+tap F8
+wait 300
+tap F3
+tap F8               # Yes: the record name is "Init" again
+wait 100
+tap F2
+wait 100
+tap F8
+wait 300
+tap F8               # Back: Synth Parameters 1/2
+tap PLAY
+wait 200
+budget-reset
+wait 1500
+budget synth-params-play 840
+fragcheck synth-params-play
+tap F7               # Load Patch popup
+wait 200
+budget-reset
+wait 1500
+budget synth-load-play 930
+fragcheck synth-load-play
+tap DOWN
+hold F5 400          # Preview the highlighted patch
+budget synth-load-preview 930
+tap F7               # Cancel
+tap INSTRPARAMS      # Synth Macros 2/2
+wait 200
+budget-reset
+wait 1500
+budget synth-macros-play 910
+fragcheck synth-macros-play
+tap INSTRPARAMS
+tap F8               # Edit Patch
+wait 200
+budget-reset
+wait 1300             # (at 1500 the play time turns 8 s between fragcheck's renders)
+budget synth-edit-play 850
+fragcheck synth-edit-play
+tap F8
+tap PATTERN
+press INSTR
+wait 400
+enc 1                # Synth 3 (VAP)
+release INSTR
+wait 100
+tap INSTRPARAMS
+wait 200
+tap F7               # its Load Patch popup (no VAP patches on the card)
+wait 200
+budget-reset
+wait 1500
+budget synth3-load-play 840
+fragcheck synth3-load-play
+tap F7
+tap PLAY
+wait 100
+# ROM font fallback (docs/OPTIMIZATION_2X.md OP-6): custom fonts unbound, as
+# after a failed font upload. Each screen must look the same with the ROM-font
+# runs drawn as CMD_TEXT and as VERTEX2II glyphs ("romcheck"), stay within the
+# 1,900-word RAM_DL target and match itself with fragments on.
+romfonts on
+wait 100
+tap PATTERN
+wait 300
+romcheck pattern
+budget-reset
+wait 300
+budget rom-pattern 1900
+fragcheck rom-pattern
+tap PLAY
+wait 200
+romcheck pattern-play
+budget-reset
+wait 1500
+budget rom-pattern-play 1900
+tap PLAY
+wait 100
+tap SONG
+wait 300
+romcheck song
+budget-reset
+wait 300
+budget rom-song 1900
+fragcheck rom-song
+tap INSTRPARAMS
+wait 300
+romcheck instrument
+tap MASTER
+wait 300
+romcheck master
+tap MASTER
+wait 300
+romcheck mixer
+tap CONFIG
+wait 300
+romcheck config
+tap FILE
+wait 300
+romcheck file
+tap SAMPLELOADER
+wait 300
+romcheck loader
+tap PERFORMANCE
+wait 300
+romcheck performance
+budget-reset
+wait 300
+budget rom-performance 1950
+tap SAMPLERECORDER
+wait 300
+romcheck recorder
+tap SAMPLEPLAYBACK
+wait 300
+romcheck playback
+tap SAMPLEEDITOR
+wait 300
+romcheck editor
+tap INSTRPARAMS      # Synth 3 (current since the synth block above)
+wait 300
+tap F7               # Load Patch popup
+wait 300
+romcheck synth-load
+budget-reset
+wait 300
+budget rom-synth-load 1900
+fragcheck rom-synth-load
+tap F7
+romfonts off
+wait 100

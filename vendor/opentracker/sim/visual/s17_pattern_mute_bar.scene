@@ -1,0 +1,37 @@
+# s17_pattern_mute_bar.scene — Snapshot_017 (W3) (docs/VISUAL_DIFF_1.9.4.md Part 2 §11).
+# Tags: @font = depends on font metrics, @content = the stock card shows
+# another project (B1t Crunch3r - Dimension X from Snapshot_015 on).
+stock Snapshot_017.png
+project Jude Frankum - Chill Out Room
+script
+  wait 300
+  tap REC
+  tap DOWN x2          # cursor on step 3: wrap row at band 5
+  tap FX1              # cursor column Fx 1 (Right moves the track, spec 06 §1.5)
+  press SHIFT          # verify: bar shows "Track n / Mute" while Shift is held
+end
+region title.fxname @font @content
+  bbox 711 8 789 19 1
+region grid.cursor.rec.fx1
+  fill 107 212 156 216 CD1818 4
+  row 210 29 210 CD1818 6
+  fill 32 213 100 216 080808 2
+region grid.fold.band5
+  row 158 0 799 8A8728 6
+  row 184 1 798 000000 2
+  pix 500 150 060606 1
+  pix 500 192 060606 1
+  pix 500 208 080808 1
+region bar.mute.labels @font
+  bbox 25 436 72 446 1
+  bbox 725 436 775 446 1
+  bbox 36 456 65 466 1
+  bbox 736 456 765 466 1
+region bar.mute.colour @font
+  pix 36 456 FFFFFF 40
+region bar.no.underline
+  row 474 10 90 0A0A0A 2
+  row 474 710 790 0A0A0A 2
+region bar.sep
+  fill 100 438 100 479 464646 3
+  fill 700 438 700 479 464646 3

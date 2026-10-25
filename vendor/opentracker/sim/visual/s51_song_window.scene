@@ -1,0 +1,189 @@
+# s51_song_window.scene — 2.x M1 (docs/M1_PLAN.md §4, spec gap 4): Song grid
+# with its 12-column window shifted to tracks 5..16 (grid cursor on track
+# 13). No stock reference: self-consistency checks against the s10 geometry.
+stock none
+project Jude Frankum - Chill Out Room
+script
+  wait 300
+  tap DOWN x13
+  tap SONG
+  wait 300
+  tap REC
+  tap LEFT             # list -> grid, rightmost column (track 12)
+  tap RIGHT            # track 13: window shifts to tracks 5..16
+  wait 100
+end
+
+# Column c shows track 5 + c: headers at the s10 columns (x 20 + 40 c), the
+# rotated "Track 5".."Track 8" / "Midi 9".."Midi 16" ink ending at y 86
+# (x edges not checked: the glyph widths differ per word).
+region grid.labels @font
+  bbox ~20 ~38 ~29 86 2
+  bbox ~60 ~38 ~69 86 2
+  bbox ~100 ~38 ~109 86 2
+  bbox ~140 ~38 ~149 86 2
+  bbox ~180 ~38 ~189 86 2
+  bbox ~220 ~38 ~229 86 2
+  bbox ~260 ~38 ~269 86 2
+  bbox ~300 ~38 ~309 86 2
+  bbox ~340 ~38 ~349 85 1       # tol 1: the selection outline starts at y 90
+  bbox ~380 ~38 ~389 86 2
+  bbox ~420 ~38 ~429 86 2
+  bbox ~460 ~38 ~469 86 2
+# Tracks 5..12 (columns 0..7) show the same slot usage as stock columns
+# 4..11 of Snapshot_010 (same project, same 12 slots): white cell interior
+# (s10 grid.cells rule) or dark empty tile (s10 grid.emptycell rule).
+region grid.cells.tracks5_12
+  fill 10 98 38 112 FFFFFF 2
+  fill 50 96 78 113 121212 2
+  fill 90 96 118 113 121212 2
+  fill 130 98 158 112 FFFFFF 2
+  fill 170 96 198 113 121212 2
+  fill 210 96 238 113 121212 2
+  fill 250 96 278 113 121212 2
+  fill 290 96 318 113 121212 2
+  fill 10 125 38 139 FFFFFF 2
+  fill 50 123 78 140 121212 2
+  fill 90 125 118 139 FFFFFF 2
+  fill 130 125 158 139 FFFFFF 2
+  fill 170 123 198 140 121212 2
+  fill 210 123 238 140 121212 2
+  fill 250 123 278 140 121212 2
+  fill 290 123 318 140 121212 2
+  fill 10 152 38 166 FFFFFF 2
+  fill 50 150 78 167 121212 2
+  fill 90 152 118 166 FFFFFF 2
+  fill 130 152 158 166 FFFFFF 2
+  fill 170 150 198 167 121212 2
+  fill 210 150 238 167 121212 2
+  fill 250 150 278 167 121212 2
+  fill 290 150 318 167 121212 2
+  fill 10 179 38 193 FFFFFF 2
+  fill 50 177 78 194 121212 2
+  fill 90 179 118 193 FFFFFF 2
+  fill 130 179 158 193 FFFFFF 2
+  fill 170 177 198 194 121212 2
+  fill 210 177 238 194 121212 2
+  fill 250 177 278 194 121212 2
+  fill 290 177 318 194 121212 2
+  fill 10 204 38 221 121212 2
+  fill 50 204 78 221 121212 2
+  fill 90 204 118 221 121212 2
+  fill 130 206 158 220 FFFFFF 2
+  fill 170 204 198 221 121212 2
+  fill 210 204 238 221 121212 2
+  fill 250 204 278 221 121212 2
+  fill 290 204 318 221 121212 2
+  fill 10 231 38 248 121212 2
+  fill 50 233 78 247 FFFFFF 2
+  fill 90 231 118 248 121212 2
+  fill 130 233 158 247 FFFFFF 2
+  fill 170 231 198 248 121212 2
+  fill 210 231 238 248 121212 2
+  fill 250 231 278 248 121212 2
+  fill 290 231 318 248 121212 2
+  fill 10 260 38 274 FFFFFF 2
+  fill 50 260 78 274 FFFFFF 2
+  fill 90 260 118 274 FFFFFF 2
+  fill 130 260 158 274 FFFFFF 2
+  fill 170 258 198 275 121212 2
+  fill 210 258 238 275 121212 2
+  fill 250 258 278 275 121212 2
+  fill 290 258 318 275 121212 2
+  fill 10 287 38 301 FFFFFF 2
+  fill 50 287 78 301 FFFFFF 2
+  fill 90 287 118 301 FFFFFF 2
+  fill 130 287 158 301 FFFFFF 2
+  fill 170 285 198 302 121212 2
+  fill 210 285 238 302 121212 2
+  fill 250 285 278 302 121212 2
+  fill 290 285 318 302 121212 2
+  fill 10 314 38 328 FFFFFF 2
+  fill 50 314 78 328 FFFFFF 2
+  fill 90 314 118 328 FFFFFF 2
+  fill 130 314 158 328 FFFFFF 2
+  fill 170 312 198 329 121212 2
+  fill 210 312 238 329 121212 2
+  fill 250 312 278 329 121212 2
+  fill 290 312 318 329 121212 2
+  fill 10 341 38 355 FFFFFF 2
+  fill 50 341 78 355 FFFFFF 2
+  fill 90 341 118 355 FFFFFF 2
+  fill 130 341 158 355 FFFFFF 2
+  fill 170 339 198 356 121212 2
+  fill 210 339 238 356 121212 2
+  fill 250 339 278 356 121212 2
+  fill 290 339 318 356 121212 2
+  fill 10 366 38 383 121212 2
+  fill 50 366 78 383 121212 2
+  fill 90 366 118 383 121212 2
+  fill 130 368 158 382 FFFFFF 2
+  fill 170 366 198 383 121212 2
+  fill 210 366 238 383 121212 2
+  fill 250 366 278 383 121212 2
+  fill 290 366 318 383 121212 2
+  fill 10 393 38 410 121212 2
+  fill 50 395 78 409 FFFFFF 2
+  fill 90 393 118 410 121212 2
+  fill 130 395 158 409 FFFFFF 2
+  fill 170 393 198 410 121212 2
+  fill 210 393 238 410 121212 2
+  fill 250 393 278 410 121212 2
+  fill 290 393 318 410 121212 2
+# Tracks 13..16 of a 1.9.x (12-track) project are empty after the load upgrade.
+region grid.empty.tracks13_16
+  fill 330 96 358 113 121212 2
+  fill 370 96 398 113 121212 2
+  fill 410 96 438 113 121212 2
+  fill 450 96 478 113 121212 2
+  fill 330 123 358 140 121212 2
+  fill 370 123 398 140 121212 2
+  fill 410 123 438 140 121212 2
+  fill 450 123 478 140 121212 2
+  fill 330 150 358 167 121212 2
+  fill 370 150 398 167 121212 2
+  fill 410 150 438 167 121212 2
+  fill 450 150 478 167 121212 2
+  fill 330 177 358 194 121212 2
+  fill 370 177 398 194 121212 2
+  fill 410 177 438 194 121212 2
+  fill 450 177 478 194 121212 2
+  fill 330 204 358 221 121212 2
+  fill 370 204 398 221 121212 2
+  fill 410 204 438 221 121212 2
+  fill 450 204 478 221 121212 2
+  fill 330 231 358 248 121212 2
+  fill 370 231 398 248 121212 2
+  fill 410 231 438 248 121212 2
+  fill 450 231 478 248 121212 2
+  fill 330 258 358 275 121212 2
+  fill 370 258 398 275 121212 2
+  fill 410 258 438 275 121212 2
+  fill 450 258 478 275 121212 2
+  fill 330 285 358 302 121212 2
+  fill 370 285 398 302 121212 2
+  fill 410 285 438 302 121212 2
+  fill 450 285 478 302 121212 2
+  fill 330 312 358 329 121212 2
+  fill 370 312 398 329 121212 2
+  fill 410 312 438 329 121212 2
+  fill 450 312 478 329 121212 2
+  fill 330 339 358 356 121212 2
+  fill 370 339 398 356 121212 2
+  fill 410 339 438 356 121212 2
+  fill 450 339 478 356 121212 2
+  fill 330 366 358 383 121212 2
+  fill 370 366 398 383 121212 2
+  fill 410 366 438 383 121212 2
+  fill 450 366 478 383 121212 2
+  fill 330 393 358 410 121212 2
+  fill 370 393 398 410 121212 2
+  fill 410 393 438 410 121212 2
+  fill 450 393 478 410 121212 2
+# Grid selection on track 13 (column 8), slot 0: the white outline on the
+# gaps, centre lines x 4 + 40 c / y 91 + 27 r (s10 grid geometry).
+region grid.selection
+  row 91 325 363 FFFFFF 8
+  row 118 325 363 FFFFFF 8
+  fill 324 93 324 116 FFFFFF 8
+  fill 364 93 364 116 FFFFFF 8

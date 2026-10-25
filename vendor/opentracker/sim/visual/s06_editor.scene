@@ -1,0 +1,69 @@
+# Snapshot_006: Sample Editor 1/2, effect list (VISUAL_DIFF §3.5). F1 Start
+# selected (red frame on the bar button), effect list unfocused. No transport.
+# Instrument 5 "Bass02" and its waveform come from the stock project.
+stock Snapshot_006.png
+project Jude Frankum - Chill Out Room
+script
+  wait 300
+  tap DOWN x13
+  tap SAMPLEEDITOR
+  wait 300
+end
+
+region title.bg
+  fill 190 0 610 25 080808 2
+region title.sep
+  row 27 0 799 1D1D1D 3
+  row 28 0 799 8F8F8F 3
+region title.text @font
+  bbox 10 8 177 22 1
+region instr.name @font
+  bbox ~560 ~4 786 ~23 2
+
+region wave.panel
+  fill 10 31 590 100 000000 1
+  fill 10 342 590 418 000000 1
+region wave.strip
+  fill 560 120 590 200 0A0A0A 3
+region wave.start
+  pix 0 200 CD1818 10
+  pix 1 110 670C0C 24
+  pix 4 110 CD1818 10
+region wave.end
+  pix 599 110 FFFFFF 10
+  pix 599 200 FFFFFF 40
+
+region list.panel
+  fill 601 380 610 400 0A0A0A 1
+region list.sel
+  fill 604 33 604 60 FFFFFF 4
+  fill 788 33 788 60 FFFFFF 4
+  row 33 607 785 FFFFFF 30
+region list.text @font
+  bbox 614 68 644 81 1
+
+region bar.strip
+  row 430 101 798 0A0A0A 2
+region bar.sep
+  fill 200 438 200 479 464646 3
+  fill 300 438 300 479 464646 3
+  fill 400 438 400 479 464646 3
+  fill 500 438 500 479 464646 3
+  fill 600 438 600 479 464646 3
+  fill 700 460 700 479 0A0A0A 2
+region bar.selected
+  fill 1 430 1 470 CD1818 3
+  fill 98 430 98 470 CD1818 3
+  fill 4 428 95 434 0A0A0A 2
+region bar.arrows
+  bbox 643 451 656 456 1
+  bbox 743 451 756 456 1
+region bar.labels @font
+  bbox 140 436 160 446 1
+  bbox 235 436 265 446 1
+  bbox 336 446 365 456 1
+  bbox 529 436 572 446 1
+  bbox 679 446 721 456 1
+
+region diff.bar @font
+  diff 0 425 799 479 15

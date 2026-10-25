@@ -1,0 +1,55 @@
+# Snapshot_005 (round 3): Master 1/3, Saturation focused.
+# Round-3 stock shot (owner's unit, firmware 1.9.2, Display theme
+# Monochrome, project "OT Test 01 - Twelve Tracks"; 2.x tools/make_testsongs).
+# The scene boots the fixture project "Jude Frankum - Chill Out Room", so
+# checks on project values / names are @content. Theme 1 = Monochrome.
+stock round3/Snapshot_005.png
+project Jude Frankum - Chill Out Room
+script
+  wait 300
+  theme 1              # Monochrome (the round-3 shots)
+  tap MASTER
+  tap F6               # Saturation focused, as in the shot
+end
+region title.bg
+  fill 150 0 290 25 B9B9BA 2
+  fill 480 0 799 25 B9B9BA 2
+region title.sep
+  row 28 0 799 C2C2C3 4
+region title.text @font
+  bbox 9 8 107 20 1
+region master.focus
+  row 31 501 598 DD2020 4
+  row 422 501 598 DD2020 4
+  fill 501 32 501 421 DD2020 4
+  fill 598 32 598 421 DD2020 4
+region master.widepanel
+  fill 102 40 497 400 3E3E3E 1
+  fill 101 40 101 400 454545 2
+region master.list.sel
+  row 34 507 594 B9B9BA 4
+  row 60 505 595 C9C9CA 4
+  fill 505 34 505 60 C9C9CA 4
+region master.list.text @font
+  bbox 515 41 585 54 1
+  bbox 515 149 562 159 1
+region master.volume @content
+  fill 13 140 88 400 C9C9CA 2
+  row 409 13 88 7E7E7E 8
+region master.bassboost @content
+  fill 620 40 689 406 3E3E3E 1
+  row 408 613 688 C9C9CA 4
+region master.space @content
+  fill 713 40 788 406 3E3E3E 1
+  row 408 713 788 C9C9CA 4
+region bar.strip
+  fill 0 426 799 434 4B4B4B 2
+region bar.labels @font
+  bbox 27 436 73 446 1
+  bbox 128 446 171 456 1
+  bbox 443 446 457 458 1
+  bbox 516 436 585 446 1
+  bbox 613 436 687 446 1
+region bar.values @font @content
+  bbox 12 456 88 467 1
+  bbox 506 456 593 470 1

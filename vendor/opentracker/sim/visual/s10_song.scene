@@ -1,0 +1,89 @@
+# Snapshot_010: Song (VISUAL_DIFF §3.9). 12x12 slot grid with rotated track
+# labels, pattern list with green frame, tempo bar. Slot usage, list numbers
+# and tempo (125 BPM) come from the stock project.
+stock Snapshot_010.png
+project Jude Frankum - Chill Out Room
+script
+  wait 300
+  tap DOWN x13
+  tap SONG
+  wait 300
+end
+
+region title.bg
+  fill 60 0 295 25 080808 2
+  fill 480 0 799 25 080808 2
+region title.sep
+  row 27 0 799 1D1D1D 3
+  row 28 0 799 8F8F8F 3
+region title.text @font
+  bbox 10 8 47 22 1
+region transport.time @font
+  bbox 300 8 358 19 1
+region transport.icon
+  fill 376 9 378 18 FFFFFF 8
+  fill 381 9 383 18 FFFFFF 8
+
+region panel.fill
+  fill 485 120 488 400 0A0A0A 1
+  fill 1 31 698 33 0A0A0A 1
+region panel.gaps
+  fill 699 40 700 400 050505 2
+region panel.shadow
+  pix 750 414 090909 1
+  pix 750 417 070707 1
+  pix 750 420 040404 1
+region grid.labels @font
+  bbox 20 38 29 86 1
+  bbox 60 35 69 86 1
+region grid.emptycell
+  fill 330 96 358 113 121212 2
+  fill 450 123 478 140 121212 2
+region grid.cells
+  fill 50 98 78 112 FFFFFF 2
+region list.caption @font
+  bbox 573 54 627 64 1
+region list.cursor
+  row 91 491 688 30CB3F 4
+  row 118 491 688 30CB3F 4
+  fill 491 91 491 118 30CB3F 4
+  fill 688 91 688 118 30CB3F 4
+region list.text @font
+  bbox 520 99 534 109 1
+region list.scrollbar
+  fill 693 340 694 413 000000 2
+region list.scrollbar.thumb
+  fill 693 100 694 330 575757 4
+region tempo.bar
+  fill 712 360 787 405 FFFFFF 2
+  fill 719 40 787 340 080808 1
+
+region bar.strip
+  row 430 1 798 0A0A0A 2
+region bar.sep
+  fill 100 438 100 479 464646 3
+  fill 200 438 200 479 464646 3
+  fill 300 438 300 479 464646 3
+  fill 400 438 400 479 464646 3
+  fill 500 438 500 479 464646 3
+  fill 700 438 700 479 464646 3
+  fill 600 476 600 479 0A0A0A 2
+region bar.underline
+  row 474 210 290 751212 4
+  row 474 310 390 751212 4
+  row 474 410 490 751212 4
+  row 474 510 690 751212 4
+  row 474 10 90 0A0A0A 2
+  row 474 110 190 0A0A0A 2
+region bar.labels @font
+  bbox 36 436 65 449 1
+  bbox 26 456 74 466 1
+  bbox 136 436 165 449 1
+  bbox 136 456 164 469 1
+  bbox 731 436 770 449 1
+region bar.disabled @font
+  bbox 236 446 265 456 1
+  bbox 532 446 667 457 1
+
+region diff.bar @font
+  diff 0 425 799 479 15

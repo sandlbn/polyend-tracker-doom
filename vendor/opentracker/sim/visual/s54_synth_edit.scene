@@ -1,0 +1,64 @@
+# s54_synth_edit.scene — 2.x WP-G (manual p.152-153): Edit Patch of Synth 2
+# (ACD, Init), Filter section, Cutoff selected. No stock reference:
+# self-consistency checks.
+stock none
+project Jude Frankum - Chill Out Room
+script
+  wait 300
+  press INSTR
+  wait 400
+  enc -70              # Synth 1 (first entry)
+  enc 1                # Synth 2 (instrument 65)
+  release INSTR
+  wait 100
+  tap INSTRPARAMS
+  wait 100
+  tap F8               # Edit Patch
+  tap RIGHT            # Filter
+  wait 200
+end
+region title.text @font
+  bbox 9 7 136 19 1
+  bbox ~600 7 785 23 1
+# Section grid (manual p.153, mirrors the lit pads): 4 x 4 cells of 91 x 56
+# px at x 9 + 97 c, y 40 + 64 r; the selected section (Filter) has the red
+# 1.5-px frame on its inner edge lines (x 107 / 195, y 41 / 94).
+region synth.sections.focus
+  fill 107 43 107 92 CD1818 4
+  fill 195 43 195 92 CD1818 4
+  row 41 109 193 CD1818 4
+  row 94 109 193 CD1818 4
+  fill 10 41 30 95 0A0A0A 2         # Osc: no frame
+region synth.sections.text @font
+  bbox 44 62 65 73 1
+  bbox 132 62 173 73 1
+  bbox 47 255 61 265 1
+# Parameter list above F5..F7 (x 401..697, s07 list rows of 27 px): the
+# white row frame on row 0 (Cutoff), labels left at x 415, values
+# right-aligned at x 685.
+region synth.params.selection
+  row 33 406 693 FFFFFF 8
+  row 60 406 693 FFFFFF 8
+  fill 404 37 404 56 FFFFFF 8
+  fill 695 37 695 56 FFFFFF 8
+  row 87 406 693 0A0A0A 2           # row 1 not framed
+region synth.params.text @font
+  bbox 415 40 462 51 1
+  bbox 639 40 685 51 1
+  bbox 416 68 485 78 1
+  bbox 655 68 685 78 1
+# The selected value above F8 (manual p.152): Cutoff 400 Hz on the log axis
+# 20 Hz..20 kHz = 0.434 of the s11 bar track (rows 248..408).
+region synth.value.bar
+  fill 712 248 787 408 FFFFFF 2
+  fill 725 45 787 244 080808 2
+# Bottom bar (manual p.153): F1 Save, F2 Save As, F3 Init / Patch, F6 the
+# section name (Filter), F8 Back; the row arrows (icons) above F5 / F7.
+region bar.labels @font
+  bbox 37 446 65 456 1
+  bbox 225 436 272 468 1
+  bbox 531 445 572 456 1
+  bbox 737 445 764 456 1
+region bar.arrows
+  bbox 446 449 453 452 1
+  bbox 646 449 653 452 1

@@ -1,0 +1,51 @@
+# s34_config_mono.scene — Snapshot_034 (W2 / W6) (docs/VISUAL_DIFF_1.9.4.md Part 2 §11).
+# Part 2 shots were taken on "B1t Crunch3r - Dimension X" (not in the
+# fixtures): checks on its content are @content. Themes and fonts are set
+# with the sim's "theme N" / "font N" script lines (no Config key flow).
+stock Snapshot_034.png
+project Jude Frankum - Chill Out Room
+script
+  wait 300
+  theme 1              # Monochrome (stock: Config > General > Display theme picker)
+  tap CONFIG
+  tap F2               # General
+  tap F6 x2            # cursor on "Display theme"
+end
+region title.bg
+  fill 70 0 295 25 B9B9BA 2
+  fill 470 0 799 25 B9B9BA 2
+region title.sep
+  row 27 0 799 BFBFC0 4
+  row 28 0 799 DFDFE0 4
+region title.text @font
+  bbox 9 7 67 22 1
+  pix 14 8 000000 40
+region main.bg
+  fill 0 100 0 400 454545 3
+  fill 199 300 199 400 554141 10
+region panels
+  fill 1 200 198 423 3E3E3E 1
+  fill 601 30 799 423 3E3E3E 1
+  pix 100 420 3E3E3E 1
+region focus
+  row 31 201 598 DD2020 4
+  row 422 201 598 DD2020 4
+  fill 201 32 201 421 DD2020 4
+region sel
+  row 60 4 195 C9C9CA 4
+  row 87 4 195 C9C9CA 4
+  row 87 204 595 C9C9CA 4
+  row 114 204 595 C9C9CA 4
+region text @font
+  bbox 14 41 139 54 1
+  bbox 214 95 316 108 1
+  bbox 509 95 587 105 1
+region bar.strip
+  row 430 1 798 4B4B4B 2
+  fill 200 438 200 479 606060 4
+  fill 600 438 600 479 606060 4
+region bar.labels @font
+  bbox 75 446 125 456 1
+  bbox 13 451 26 456 1
+  bbox 733 446 767 456 1
+  pix 19 453 FFFFFF 30

@@ -1,0 +1,16 @@
+# Sample Recorder level meter (2.0.1 user report "metering seems slow"):
+# with a moving input (--line-in-tone bursts) the meter redraws at >= 25 fps.
+wait 300
+tap SAMPLERECORDER
+expect-screen Sample Recorder
+wait 500
+fps-reset
+wait 3000
+expect-fps 25
+# While recording, the time / waveform view keeps redrawing (regression of
+# the faster meter: it froze at "Recording 0.1 s").
+tap REC
+wait 500
+fps-reset
+wait 2000
+expect-fps 15

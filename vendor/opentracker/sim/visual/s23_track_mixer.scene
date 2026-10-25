@@ -1,0 +1,34 @@
+# Snapshot_023: VISUAL_DIFF Part 2 §11 block s23_track_mixer (W6). Boots the stock
+# fixture project; 015-042 show "B1t Crunch3r - Dimension X", so its
+# project-dependent content is tagged @content.
+stock Snapshot_023.png
+project Jude Frankum - Chill Out Room
+script
+  wait 300
+  tap MASTER x2
+end
+region mixer.headers
+  fill 2 32 98 38 080808 1
+  fill 2 53 98 58 080808 1
+  fill 702 32 798 38 080808 1
+  fill 0 60 799 62 000000 1
+region mixer.header.text @font
+  bbox 16 40 81 51 1
+  bbox 716 40 784 51 1
+region mixer.panels
+  fill 2 64 49 73 0A0A0A 1
+  fill 52 64 99 73 0A0A0A 1
+  fill 50 64 51 73 050505 3
+region mixer.fader @content
+  fill 13 150 38 400 FFFFFF 2
+  fill 20 76 39 139 080808 1
+  pix 11 200 090909 2
+  pix 40 200 090909 2
+region mixer.meter
+  row 408 63 88 30CB3F 4
+  fill 70 76 89 404 080808 1
+  pix 61 200 090909 2
+region bar.labels @font @content
+  bbox 19 436 81 446 1
+  bbox 31 456 68 467 1
+  bbox 731 456 768 467 1

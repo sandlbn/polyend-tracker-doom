@@ -1,0 +1,74 @@
+# Key flows from the 2.0.1 user report (run by 'make check').
+# 1. Performance key enters Performance from every screen (spec 05 §2.5).
+# 2. Master: F2..F5 open Reverb / Delay / Limiter / EQ, F8 returns; short
+#    Master presses cycle Master 1/3 -> Track Mixer 2/3 -> Global Mixer 3/3;
+#    a hold jumps to the Master main page (spec 06 §4.1-§4.3).
+wait 300
+tap PATTERN
+expect-screen Pattern
+tap PERFORMANCE
+expect-screen Performance
+tap SONG
+expect-screen Song
+tap PERFORMANCE 200
+expect-screen Performance
+tap INSTRPARAMS
+tap PERFORMANCE
+expect-screen Performance
+tap SAMPLERECORDER
+expect-screen Sample Recorder
+tap PERFORMANCE 300
+expect-screen Performance
+tap CONFIG
+tap PERFORMANCE 400
+expect-screen Performance
+tap FILE
+tap PERFORMANCE 150
+expect-screen Performance
+tap SAMPLELOADER
+tap PERFORMANCE 150
+expect-screen Performance
+tap SAMPLEPLAYBACK
+tap PERFORMANCE
+expect-screen Performance
+tap MASTER 150
+expect-screen Master
+expect-master 0 0
+tap F2 150
+expect-master 0 1
+tap F8 150
+expect-master 0 0
+tap F3 250
+expect-master 0 2
+tap F8
+tap F4 400
+expect-master 0 3
+tap F8
+tap F5 120
+expect-master 0 4
+tap F8
+expect-master 0 0
+tap MASTER 150
+expect-master 1 0
+tap MASTER 250
+expect-master 2 0
+tap MASTER 120
+expect-master 0 0
+tap MASTER
+tap MASTER
+expect-master 2 0
+hold MASTER 600
+expect-master 0 0
+# The same while playing.
+tap PLAY
+wait 200
+tap PERFORMANCE
+expect-screen Performance
+tap MASTER
+expect-master 0 0
+tap F3
+expect-master 0 2
+tap F8
+tap MASTER
+expect-master 1 0
+tap PLAY

@@ -1,0 +1,13 @@
+# Smoke test: boot, move the cursor, enter a note from a pad, start/stop playback.
+wait 200
+screenshot ../build/sim/smoke-boot.png
+tap DOWN
+tap DOWN
+tap REC
+pad 24 tap
+wait 100
+tap PLAY
+wait 500
+panelshot ../build/sim/smoke-panel.png
+tap PLAY
+wait 100

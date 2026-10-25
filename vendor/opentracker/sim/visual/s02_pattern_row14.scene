@@ -1,0 +1,105 @@
+# Snapshot_002 (= Snapshot_003, byte-identical): Pattern screen, cursor on
+# step 14 (VISUAL_DIFF §3.2): no pattern-start fold, stripes 9/13/17/21.
+# Stock card: "Jude Frankum - Chill Out Room", pattern 10, instrument 5; the
+# scene boots the same stock project (PROJECTS, see sim/Makefile).
+# Tags: @font = depends on font metrics.
+stock Snapshot_002.png
+project Jude Frankum - Chill Out Room
+script
+  wait 300
+  tap DOWN x13
+end
+
+region title.bg
+  fill 110 0 295 25 080808 2
+  fill 475 0 615 25 080808 2
+region title.sep
+  row 27 0 799 1D1D1D 3
+  row 28 0 799 8F8F8F 3
+  row 29 103 211 1D1D1D 3
+region title.text @font
+  bbox 9 8 ~106 19 1
+region transport.time @font
+  bbox 300 8 358 19 1
+region transport.icon
+  fill 376 9 378 18 FFFFFF 8
+  fill 381 9 383 18 FFFFFF 8
+  fill 379 8 380 19 080808 4
+region transport.pos @font
+  bbox 404 8 473 19 1
+region instr.name @font
+  bbox ~560 ~4 786 ~23 2
+
+region grid.tabs
+  fill 28 30 100 33 575757 3
+  fill 214 30 286 33 575757 3
+  fill 400 30 472 33 575757 3
+  fill 586 30 658 33 575757 3
+  fill 103 30 211 38 080808 2
+region grid.tabs.text @font
+  bbox 31 35 96 46 1
+region grid.separators
+  fill 27 58 27 208 000000 1
+  fill 213 58 213 208 000000 1
+  fill 399 58 399 208 000000 1
+  fill 585 58 585 208 000000 1
+  fill 772 30 772 208 000000 1
+  fill 27 237 27 422 000000 1
+region grid.rows
+  fill 100 160 200 166 080808 1
+  fill 100 186 200 192 0E0E0E 1
+  fill 100 239 200 244 080808 1
+region grid.stepcols @font
+  bbox 3 61 ~22 71 1
+  bbox 776 61 ~795 71 1
+region grid.dashes @font
+  pix 38 67 01322D 4
+region grid.nofold
+  row 210 215 397 0E0E0E 2
+  row 236 215 397 080808 2
+region grid.cursor
+  fill 29 213 69 220 30CB3F 6
+  row 210 30 209 30CB3F 4
+  fill 210 213 210 233 30CB3F 6
+region grid.shadow
+  pix 150 414 070707 1
+  pix 150 418 040404 1
+  pix 150 422 010101 1
+
+region bar.strip
+  row 430 1 798 0A0A0A 2
+  fill 1 425 798 433 0A0A0A 2
+region bar.sep
+  fill 100 438 100 479 464646 3
+  fill 200 438 200 479 464646 3
+  fill 300 438 300 479 464646 3
+  fill 400 438 400 479 464646 3
+  fill 500 438 500 479 464646 3
+  fill 600 438 600 479 464646 3
+  fill 700 438 700 479 464646 3
+  fill 100 425 100 436 0A0A0A 2
+region bar.labels @font
+  bbox 26 436 74 446 1
+  bbox 128 436 170 449 1
+  bbox 218 436 282 449 1
+  bbox 736 436 765 446 1
+region bar.values @font
+  bbox ~30 456 ~70 467 1
+  bbox ~120 456 ~180 467 1
+region bar.underline
+  row 474 10 90 1F7427 4
+  row 474 110 190 1F7427 4
+  row 474 210 290 1F7427 4
+  row 474 310 390 751212 4
+  row 474 410 490 1F7427 4
+  row 474 510 590 751212 4
+  row 474 610 690 751212 4
+  row 474 702 798 0A0A0A 2
+region bar.pagedots
+  fill 736 461 738 465 777777 6
+  fill 749 462 751 464 222222 6
+  fill 762 462 764 464 222222 6
+  pix 744 463 0A0A0A 2
+
+region diff.chrome @font
+  diff 0 425 799 479 25

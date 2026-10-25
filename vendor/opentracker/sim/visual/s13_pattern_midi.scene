@@ -1,0 +1,31 @@
+# s13_pattern_midi.scene — Snapshot_013 (W3) (docs/VISUAL_DIFF_1.9.4.md Part 2 §11).
+# Tags: @font = depends on font metrics, @content = the stock card shows
+# another project (B1t Crunch3r - Dimension X from Snapshot_015 on).
+stock Snapshot_013.png
+project Jude Frankum - Chill Out Room
+script
+  wait 300
+  tap REC
+  tap RIGHT x11        # track 12 (Midi 12), note column (Right moves the track;
+                       # 2.x: x44 would now clamp at Midi 16)
+end
+region grid.tabs.midi
+  fill 28 30 90 33 575757 3
+  fill 214 30 286 33 575757 3
+  fill 400 30 472 33 575757 3
+  fill 586 30 658 33 575757 3
+  fill 98 30 101 55 080808 3
+region grid.tabs.text @font
+  bbox 31 35 ~86 46 1
+  bbox 217 35 284 46 1
+region grid.cursor.rec
+  fill 587 212 627 222 CD1818 4
+  row 210 587 768 CD1818 6
+  row 235 587 768 CD1818 6
+  fill 768 213 768 233 CD1818 6
+region grid.left.normal
+  fill 100 212 200 222 0E0E0E 2
+region instr.name @font @content
+  bbox ~560 8 786 19 2
+region diff.bar @font
+  diff 0 425 799 479 15

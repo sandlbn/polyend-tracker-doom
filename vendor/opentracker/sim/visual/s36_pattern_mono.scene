@@ -1,0 +1,55 @@
+# s36_pattern_mono.scene — Snapshot_036 (W2 / W3) (docs/VISUAL_DIFF_1.9.4.md Part 2 §11).
+# Part 2 shots were taken on "B1t Crunch3r - Dimension X" (not in the
+# fixtures): checks on its content are @content. Themes and fonts are set
+# with the sim's "theme N" / "font N" script lines (no Config key flow).
+stock Snapshot_036.png
+project Jude Frankum - Chill Out Room
+script
+  wait 300
+  theme 1              # Monochrome
+  tap PATTERN
+end
+region title.bg
+  fill 100 0 295 25 B9B9BA 2
+region title.text @font
+  bbox 9 8 94 19 1
+  pix 14 8 000000 40
+region grid.bg
+  fill 103 30 211 40 3E3E3E 1
+  fill 100 61 200 66 3E3E3E 1
+  fill 100 108 200 111 454545 1
+region grid.tabs
+  fill 28 30 100 33 303030 3
+region grid.tabs.text @font
+  bbox 31 35 96 46 1
+  pix 33 35 FFFFFF 40
+region grid.separators
+  fill 27 58 27 208 717171 3
+  fill 213 58 213 208 717171 3
+  fill 772 30 772 208 717171 3
+region grid.dashes @font
+  row 67 114 119 E5E5E5 6
+  row 67 168 173 E5E5E5 6
+region grid.cursor
+  row 210 29 210 30CB3F 6
+  fill 30 212 68 216 30CB3F 4
+  pix 35 222 000000 12
+region grid.trough
+  pix 500 200 3D3D3D 1
+  pix 500 208 333333 1
+  pix 500 236 303030 1
+  pix 500 246 3D3D3D 1
+  row 210 213 799 8A8728 6
+region grid.stepcols @font
+  bbox 3 61 21 71 1
+  pix 10 71 FFFFFF 40
+region bar.strip
+  row 430 1 798 4B4B4B 2
+  fill 100 438 100 479 606060 4
+region bar.underline
+  row 474 10 90 3C9144 6
+  row 474 310 390 9A3333 6
+region bar.labels @font
+  bbox 26 436 75 446 1
+  bbox 736 436 765 446 1
+  pix 27 436 FFFFFF 40

@@ -1,0 +1,41 @@
+# Snapshot_021: VISUAL_DIFF Part 2 §11 block s21_performance (W6). Boots the stock
+# fixture project; 015-042 show "B1t Crunch3r - Dimension X", so its
+# project-dependent content is tagged @content.
+stock Snapshot_021.png
+project Jude Frankum - Chill Out Room
+script
+  wait 300
+  tap PERFORMANCE
+end
+region title.text @font
+  bbox 9 7 148 19 1
+region perf.titleband
+  fill 11 34 73 53 0A0A0A 1
+  fill 726 34 788 53 0A0A0A 1
+  fill 11 55 73 69 0A0A0A 1
+  fill 0 71 799 81 000000 1
+  fill 74 40 75 65 000000 6
+region perf.labelarea
+  fill 0 266 799 277 000000 1
+  fill 55 82 75 266 000000 1
+region perf.body
+  fill 11 279 73 298 0A0A0A 1
+  fill 11 300 73 328 0A0A0A 1
+  fill 726 390 788 413 0A0A0A 1
+region perf.dashes @font
+  row 299 29 34 2BB138 12
+  row 329 29 34 DEDEDE 12
+  row 54 29 34 DEDEDE 12
+region perf.arrows @font @content
+  bbox 678 51 705 57 1
+  bbox 678 296 705 302 1
+region perf.vlabel @font
+  bbox 38 ~100 52 265 2
+# "Patt: 1" in the stock shot (B1t Crunch3r, pattern 1); the fixture is on
+# pattern 10, so the value width is content.
+region bar.labels @font @content
+  bbox 25 436 72 446 1
+  bbox 16 456 81 467 1
+  bbox 716 456 781 467 1
+region bar.sep
+  fill 600 438 600 479 464646 3

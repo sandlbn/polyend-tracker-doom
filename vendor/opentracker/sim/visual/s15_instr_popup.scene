@@ -1,0 +1,48 @@
+# s15_instr_popup.scene — Snapshot_015 (W3 / W2) (docs/VISUAL_DIFF_1.9.4.md Part 2 §11).
+# Tags: @font = depends on font metrics, @content = the stock card shows
+# another project (B1t Crunch3r - Dimension X from Snapshot_015 on).
+stock Snapshot_015.png
+project Jude Frankum - Chill Out Room
+script
+  wait 300
+  tap REC              # the stock card is in Rec mode (red cursor)
+  tap DOWN x2          # cursor on step 3: wrap row at band 5
+  press INSTR          # popup shown while the column key is held
+  wait 300             # > 180 ms
+end
+region popup.header
+  fill 601 0 799 6 FFFFFF 2
+  fill 740 0 799 26 FFFFFF 2
+  row 27 601 799 868686 6
+  row 28 602 799 525252 6
+region popup.header.text @font
+  bbox 621 8 729 19 1
+region popup.panel
+  fill 606 299 785 310 0A0A0A 1
+  fill 602 438 799 479 0A0A0A 2
+region popup.sel @content
+  row 88 603 790 FFFFFF 4
+  row 115 603 790 FFFFFF 4
+  fill 603 89 603 114 FFFFFF 4
+  fill 790 89 790 114 FFFFFF 4
+region popup.text @font @content
+  bbox 613 42 ~780 52 1
+# 2.x: Synth 1..3 are the first three entries (Tracker+ manual p.100), so
+# the cursor on instrument 5 is entry 7 of 67 and the thumb (placed by the
+# cursor) sits 14 px lower than on the stock card (entry 4): y 71..149 here,
+# 57..131 on the card. The region checks the rows both cover.
+region popup.scroll @content
+  fill 795 74 796 130 333333 4
+  fill 794 300 797 400 000000 2
+region grid.threetrack
+  fill 475 30 600 40 080808 2
+  fill 587 42 600 53 080808 2
+  fill 401 94 600 118 080808 1
+region grid.cursor.rec.instr
+  fill 73 212 102 216 CD1818 4
+  row 210 29 210 CD1818 6
+  fill 32 213 68 216 080808 2
+region title.popup
+  fill 300 0 460 25 080808 2
+region bar.sep
+  fill 600 438 600 479 464646 3

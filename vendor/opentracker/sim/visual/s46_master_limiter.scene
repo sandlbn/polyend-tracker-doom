@@ -1,0 +1,60 @@
+# Snapshot_008 (round 3): Master Limiter, Sidechain focused (Disable).
+# Round-3 stock shot (owner's unit, firmware 1.9.2, Display theme
+# Monochrome, project "OT Test 01 - Twelve Tracks"; 2.x tools/make_testsongs).
+# The scene boots the fixture project "Jude Frankum - Chill Out Room", so
+# checks on project values / names are @content. Theme 1 = Monochrome.
+stock round3/Snapshot_008.png
+project Jude Frankum - Chill Out Room
+script
+  wait 300
+  theme 1              # Monochrome (the round-3 shots)
+  tap MASTER
+  tap F4
+  tap F5
+end
+region title.bg
+  fill 150 0 290 25 B9B9BA 2
+  fill 480 0 799 25 B9B9BA 2
+region title.sep
+  row 28 0 799 C2C2C3 4
+region title.text @font
+  bbox 9 8 147 20 1
+region limiter.focus
+  row 31 401 498 DD2020 4
+  row 422 401 498 DD2020 4
+  fill 401 32 401 421 DD2020 4
+  fill 498 32 498 421 DD2020 4
+region limiter.bars @content
+  fill 13 380 88 400 C9C9CA 2
+  row 408 113 188 C9C9CA 6
+  fill 213 80 288 400 C9C9CA 2
+region limiter.gr.meter
+  row 39 313 388 00A4B3 6
+  fill 313 42 388 400 3E3E3E 1
+region limiter.sidechain.sel
+  row 34 407 494 B9B9BA 6
+  row 60 407 494 C9C9CA 6
+region limiter.sidechain.list @font
+  bbox 414 41 469 51 1
+  bbox 415 284 486 294 1
+  bbox 415 311 486 321 1
+region limiter.sidechain.names @font @content
+  bbox 415 68 444 78 1
+  bbox 415 230 438 243 1
+region limiter.rightpanel
+  fill 502 40 798 400 3E3E3E 1
+region bar.labels @font
+  bbox 13 436 88 446 1
+  bbox 115 436 186 446 1
+  bbox 214 436 286 446 1
+  bbox 418 436 483 446 1
+region bar.gainreduce @font
+  bbox 310 446 391 456 1
+  pix 311 449 FFFFFF 40
+  pix 323 452 FFFFFF 40
+region bar.values @font @content
+  bbox 20 456 79 467 1
+  bbox 211 456 289 467 1
+  bbox 415 456 484 467 1
+region bar.back @font
+  bbox 736 436 764 446 1

@@ -1,0 +1,9 @@
+# New game, then nothing: the player must stay at the E1M1 start (1056, -3616).
+40 button 0 1
+41 button 0 0
+60 button 33 1
+61 button 33 0
+80 button 33 1
+81 button 33 0
+100 button 33 1
+101 button 33 0

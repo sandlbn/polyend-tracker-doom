@@ -1,0 +1,85 @@
+# Snapshot_009: Sample Loader at the SD root (VISUAL_DIFF §3.8). SD panel
+# focused, Instruments list cursor on instrument 5, Preview Vol and Memory bars.
+stock Snapshot_009.png
+project Jude Frankum - Chill Out Room
+script
+  wait 300
+  tap DOWN x13
+  tap SAMPLELOADER
+  wait 300
+end
+
+region title.bg
+  fill 150 0 295 25 080808 2
+  fill 480 0 799 25 080808 2
+region title.sep
+  row 27 0 799 1D1D1D 3
+  row 28 0 799 8F8F8F 3
+region title.text @font
+  bbox 10 8 136 22 1
+region transport.time @font
+  bbox 300 8 358 19 1
+region transport.icon
+  fill 376 9 378 18 FFFFFF 8
+  fill 381 9 383 18 FFFFFF 8
+
+region panel.focus
+  row 31 1 298 CD1818 3
+  fill 1 40 1 400 CD1818 3
+  fill 298 40 298 400 CD1818 3
+  row 422 10 290 CD1818 3
+region panel.gaps
+  fill 599 100 600 400 050505 2
+  fill 699 40 700 400 050505 2
+region panel.shadow
+  pix 450 414 090909 1
+  pix 450 417 070707 1
+  pix 450 421 030303 1
+region caption @font
+  bbox 115 40 183 51 1
+  bbox 395 40 503 51 1
+region sd.cursor
+  row 65 10 280 CD1818 4
+  row 92 10 280 CD1818 4
+region sd.text @font
+  bbox 15 100 ~85 ~111 1
+region instr.cursor
+  fill 304 173 304 200 FFFFFF 4
+  row 200 310 580 FFFFFF 4
+region instr.text @font
+  bbox 314 73 ~472 ~86 1
+region instr.scrollbar
+  fill 594 70 595 90 000000 2
+  fill 594 190 595 410 000000 2
+region instr.scrollbar.thumb
+  fill 594 95 594 180 333333 4
+region previewvol.bar
+  fill 612 100 687 400 FFFFFF 2
+  pix 650 90 7A7A7A 6
+  fill 619 40 687 85 080808 1
+region memory.bar
+  fill 712 330 787 400 FFFFFF 2
+  fill 719 40 787 300 080808 1
+
+region bar.strip
+  row 430 1 798 0A0A0A 2
+region bar.sep
+  fill 100 438 100 479 464646 3
+  fill 200 438 200 479 464646 3
+  fill 300 438 300 479 464646 3
+  fill 400 438 400 479 464646 3
+  fill 500 438 500 479 464646 3
+  fill 600 438 600 479 464646 3
+  fill 700 438 700 479 464646 3
+region bar.labels @font
+  bbox 33 446 66 456 1
+  bbox 608 436 692 446 1
+  bbox 727 436 773 449 1
+region bar.disabled @font
+  bbox 120 446 181 456 1
+  bbox 528 437 572 466 1
+region bar.values @font
+  bbox 616 456 683 467 1
+
+region diff.bar @font
+  diff 0 425 799 479 15

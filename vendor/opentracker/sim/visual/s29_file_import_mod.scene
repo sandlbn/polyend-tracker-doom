@@ -1,0 +1,38 @@
+# Snapshot_029: VISUAL_DIFF Part 2 §11 block s29_file_import_mod (W6). Boots the stock
+# fixture project; 015-042 show "B1t Crunch3r - Dimension X", so its
+# project-dependent content is tagged @content.
+stock Snapshot_029.png
+project Jude Frankum - Chill Out Room
+script
+  wait 300
+  tap FILE
+  tap F3               # sim File menu: F3 = Import Mod
+end
+region title.text @font
+  bbox 9 8 177 22 1
+region caption.band
+  fill 3 32 100 39 080808 1
+  fill 200 32 297 58 080808 1
+region caption @font
+  bbox 117 40 184 51 1
+region sd.nofocus
+  fill 1 100 3 400 0A0A0A 2
+  row 31 3 297 040404 3
+region sd.cursor
+  row 65 4 295 CD1818 4
+  row 92 4 295 CD1818 4
+  fill 4 66 4 91 CD1818 4
+# Stock lists "/.." even at the Mod root; the sim's import browser starts
+# at Mod without an up entry (spec 05 appendix E1.2 as implemented), so the
+# empty folder shows only the outlined cursor row.
+region sd.text @font @content
+  bbox 15 73 31 84 1
+region panel.right
+  fill 310 40 790 400 0A0A0A 1
+region bar.labels @font
+  bbox 33 446 66 456 1
+  bbox 630 446 672 456 1
+region bar.disabled @font
+  bbox 228 446 272 456 1
+  bbox 729 446 772 459 1
+  pix 229 446 333333 40

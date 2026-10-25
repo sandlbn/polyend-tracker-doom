@@ -1,0 +1,40 @@
+# Snapshot_028: VISUAL_DIFF Part 2 §11 block s28_games (W6). Boots the stock
+# fixture project; 015-042 show "B1t Crunch3r - Dimension X", so its
+# project-dependent content is tagged @content.
+stock Snapshot_028.png
+project Jude Frankum - Chill Out Room
+script
+  wait 300
+  tap FILE
+  tap F7               # sim File menu: F7 = Games
+end
+region title.text @font
+  bbox 9 8 57 19 1
+region panels
+  fill 0 40 247 400 0A0A0A 1
+  fill 250 200 547 400 0A0A0A 1
+  fill 550 140 799 400 0A0A0A 1
+  fill 248 40 249 400 000000 6
+  fill 548 40 549 400 000000 6
+region list.sel
+  row 33 253 544 FFFFFF 4
+  row 60 253 544 FFFFFF 4
+region list.text @font @content
+  bbox 263 41 334 54 1
+  bbox 263 68 301 78 1
+# The hint wording is OpenTracker's own (spec 14 §1.5), so only the left
+# and top edges of the first two lines are checked.
+region help.text @font
+  bbox 655 69 ~776 ~82 1
+  bbox 655 91 ~746 ~105 1
+region bar.strip.dark
+  row 430 1 798 050505 2
+  fill 100 438 100 479 434343 3
+region bar.labels @font
+  bbox 47 446 53 456 1
+  bbox 148 446 154 456 1
+  bbox 343 451 356 456 1
+  bbox 443 451 456 456 1
+  bbox 632 436 668 446 1
+  bbox 636 456 665 466 1
+  bbox 735 446 764 456 1

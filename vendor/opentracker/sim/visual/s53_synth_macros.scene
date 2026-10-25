@@ -1,0 +1,51 @@
+# s53_synth_macros.scene — 2.x WP-G (manual p.149): Synth Macros 2/2 of
+# Synth 2 (ACD, Init). No stock reference: self-consistency checks.
+stock none
+project Jude Frankum - Chill Out Room
+script
+  wait 300
+  press INSTR
+  wait 400
+  enc -70              # Synth 1 (first entry)
+  enc 1                # Synth 2 (instrument 65)
+  release INSTR
+  wait 100
+  tap INSTRPARAMS
+  wait 100
+  tap INSTRPARAMS      # page 2/2
+  wait 200
+end
+region title.text @font
+  bbox 9 7 168 23 1
+  bbox ~600 7 785 23 1
+# Six macro bars over F1..F6 (rows 29..298, s11 bar geometry), every page
+# value 0 = the base line at row 284; M1 framed in red (centre lines x 1 /
+# 98, rows 31 / 298); the F7 / F8 panel empty.
+region synth.macro.bars @content
+  row 284 12 87 FFFFFF 2
+  row 284 112 187 FFFFFF 2
+  row 284 512 587 FFFFFF 2
+  fill 125 45 187 280 080808 2
+region synth.macro.focus
+  fill 1 31 1 297 CD1818 4
+  fill 98 31 98 297 CD1818 4
+  row 298 3 96 CD1818 4
+  fill 101 297 198 298 030303 3     # M2 not framed
+region synth.macro.rightpanel
+  fill 605 40 796 280 0A0A0A 1
+# Legend below the bars (manual p.149): "Macro k" and the macro name in two
+# columns, rows 26 + 32 k below y 303; the selected macro's name in white.
+region synth.legend.panel
+  fill 5 306 796 312 0A0A0A 1
+  fill 300 318 400 400 0A0A0A 1
+  row 301 5 796 000000 2           # 4-px gap between the bars and the legend
+region synth.legend.text @font
+  bbox 23 324 70 334 1
+  bbox 23 356 72 366 1
+  bbox 132 324 181 334 1
+  bbox 423 324 472 334 1
+region synth.legend.selected @font
+  pix 133 329 FFFFFF 40            # "Macro 1" name (selected): white ink (unselected 777777)
+region bar.labels @font
+  bbox 14 436 85 467 1
+  bbox 114 436 187 467 1

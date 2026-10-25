@@ -1,0 +1,84 @@
+# Snapshot_004: Config, Project Settings (VISUAL_DIFF §3.3). Category list
+# focused (2-px red frame), option list unfocused but cursor row framed.
+# Tags: @font = depends on font metrics.
+stock Snapshot_004.png
+project Jude Frankum - Chill Out Room
+script
+  wait 300
+  tap DOWN x13
+  tap CONFIG
+  wait 300
+end
+
+region title.bg
+  fill 80 0 295 25 080808 2
+  fill 480 0 799 25 080808 2
+region title.sep
+  row 27 0 799 1D1D1D 3
+  row 28 0 799 8F8F8F 3
+region title.text @font
+  bbox 9 7 67 22 1
+region transport.time @font
+  bbox 300 8 358 19 1
+region transport.icon
+  fill 376 9 378 18 FFFFFF 8
+  fill 381 9 383 18 FFFFFF 8
+  fill 379 8 380 19 080808 4
+region transport.pos @font
+  bbox 404 8 473 19 1
+
+region panel.focus
+  row 31 1 198 CD1818 3
+  fill 1 40 1 400 CD1818 3
+  fill 198 40 198 400 CD1818 3
+  fill 1 410 1 422 CD1818 3
+region panel.fill
+  fill 10 200 190 400 0A0A0A 1
+  fill 210 320 590 400 0A0A0A 1
+  fill 610 40 790 400 0A0A0A 1
+region panel.gaps
+  fill 599 40 600 400 050505 2
+region panel.shadow
+  pix 300 414 090909 1
+  pix 300 417 070707 1
+  pix 300 421 030303 1
+region list.cat.sel
+  row 34 7 192 E3E3E3 4
+  row 59 7 192 E3E3E3 4
+  fill 4 36 4 58 FFFFFF 4
+  fill 195 36 195 58 FFFFFF 4
+region list.opt.sel
+  fill 204 33 204 60 FFFFFF 4
+  row 34 207 592 E3E3E3 4
+  row 59 207 592 E3E3E3 4
+region list.text @font
+  bbox 14 68 68 78 1
+  bbox 214 68 331 78 1
+  bbox 581 68 588 78 1
+
+region bar.strip
+  row 430 1 798 050505 2
+region bar.sep
+  fill 200 438 200 479 434343 3
+  fill 600 438 600 479 434343 3
+  fill 700 438 700 479 434343 3
+  fill 100 460 100 479 050505 2
+  fill 300 460 300 479 050505 2
+  fill 400 460 400 479 050505 2
+  fill 500 460 500 479 050505 2
+region bar.arrows
+  bbox 13 451 26 456 1
+  bbox 173 451 186 456 1
+  bbox 243 451 256 456 1
+  bbox 543 451 556 456 1
+region bar.text @font
+  bbox 42 446 157 459 1
+  bbox 331 446 468 459 1
+  bbox 733 446 766 456 1
+region bar.nounderline
+  row 474 1 198 050505 2
+
+region diff.panels @font
+  diff 0 30 799 424 10
+region diff.bar @font
+  diff 0 425 799 479 10

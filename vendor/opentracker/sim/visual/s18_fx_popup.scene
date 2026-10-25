@@ -1,0 +1,33 @@
+# s18_fx_popup.scene — Snapshot_018 (W3 / W2) (docs/VISUAL_DIFF_1.9.4.md Part 2 §11).
+# Tags: @font = depends on font metrics, @content = the stock card shows
+# another project (B1t Crunch3r - Dimension X from Snapshot_015 on).
+stock Snapshot_018.png
+project Jude Frankum - Chill Out Room
+script
+  wait 300
+  tap REC
+  tap DOWN x2
+  press FX1
+  wait 300             # > 180 ms
+end
+region popup.header
+  fill 601 0 799 6 FFFFFF 2
+  fill 660 0 799 26 FFFFFF 2
+region popup.header.text @font
+  bbox 621 8 640 19 1
+region popup.sel @content
+  row 331 603 790 FFFFFF 4
+  row 358 603 790 FFFFFF 4
+  fill 603 332 603 357 FFFFFF 4
+region popup.rows @font
+  bbox 613 42 ~700 52 1
+  bbox 613 339 ~700 349 1
+region popup.scroll @content
+  fill 795 110 796 250 333333 4
+region popup.footer @font
+  bbox 607 452 622 464 1
+  bbox 640 453 725 466 1
+  pix 609 458 777777 40
+region popup.panel
+  fill 602 438 605 479 0A0A0A 2
+  fill 730 440 790 450 0A0A0A 2
